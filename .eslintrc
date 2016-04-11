@@ -1,0 +1,21 @@
+{
+  "extends": "eslint-config-connections",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jasmine": true,
+    "node": true
+  },
+  "globals": {
+    "angular": true,
+    "CSSJSON": true,
+    "html2canvas": true,
+    "Mousetrap": true,
+    "R": true,
+
+    "inject": true,
+    "spyOn": true,
+    "BeforeEachHelper": true,
+    "TestHelper": true
+  }
+}
