@@ -2,10 +2,10 @@
   "name": "node-push",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "build": "babel src -d dist",
-    "start": "nodemon src/index.js --exec babel-node"
+    "start": "nodemon src/app.js --exec babel-node"
   },
   "keywords": [],
   "author": "Jon Clerck <jmclerck@icloud.com>",
