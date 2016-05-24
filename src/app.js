@@ -21,9 +21,4 @@ app.post('/push', (req, res) => {
   res.send(req.body.endpoint);
 });
 
-//{
-//  key: fs.readFileSync('/etc/letsencrypt/live/jclerck.io/privkey.pem'),
-//  cert: fs.readFileSync('/etc/letsencrypt/live/jclerck.io/cert.pem'),
-//},
-
 http.createServer(app).listen(3000);
