@@ -1,38 +1,8 @@
 version: '2'
 services:
-  builder:
-    build:
-      context: ../cc_builder_client
-    container_name: builder-dev
-    ports:
-      - '0.0.0.0:80:9000'
-      - '35729:35729'
-    volumes:
-      - '.:/home/client'
-  management:
-    build:
-      context: ../cc_project_management
-    container_name: project-management
-    ports:
-      - '35749:35749'
-    volumes:
-      - '.:/home/project'
-  db:
-    build:
-      context: .
-      dockerfile: Dockerfile.postgres
-    container_name: postgres
-    environment:
-      - POSTGRES_DB=builder
-    ports:
-      - '5433:5433'
   server:
-    build:
-      context: .
-      dockerfile: Dockerfile.tomcat
-    container_name: builder
+    build: .
+    container_name: postgres
     ports:
-      - '8080:8080'
-      - '9030:9030'
-    links:
-      - db
+      - '443:443'
+      - '80:80'

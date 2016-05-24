@@ -1,31 +1,29 @@
-FROM node:0.10
+## Ref: http://www.clock.co.uk/blog/a-guide-on-how-to-cache-npm-install-with-docker
+FROM node:6
 
-## Install OS tools, ruby + compass
-RUN apt-get update && apt-get -y install ruby-full
-RUN gem update --system && gem install compass
+RUN mkdir /root/tmp
+RUN mkdir /root/content
 
-## Install global npm tools
-RUN npm install -g bower
-RUN npm install -g grunt-cli
+## Set working directory to a tmp directory
+WORKDIR /root/tmp
 
-## Add CoDE npm registry
-RUN npm config set registry https://npm.ncrcoe.com/
+## Move package.json to tmp directory
+COPY package.json /root/tmp/package.json
 
-RUN mkdir /home/client
-
-## Set working directory to project directory
-WORKDIR /home/client
-
-## Copy the rest of our assets into project directory
-COPY bower.json /home/client
-COPY Gruntfile.js /home/client
-COPY karma.conf.js /home/client
-COPY package.json /home/client
-COPY app /home/client
-COPY test /home/client
-
-## Install npm dependencies
+## Install npm dependencies then move into place
 RUN npm install
+RUN cp -rf node_modules /root/content
+RUN cp package.json /root/content/package.json
 
-## Start grunt server
-CMD ["grunt", "serve"]
+## Set working directory to final content location
+WORKDIR /root/content
+
+## Copy the static contents and node server
+COPY html /root/content/html
+COPY src /root/content/src
+
+## Run the babel build task
+RUN npm run build
+
+## Drop to bash shell and wait
+CMD ["/bin/sh"]
