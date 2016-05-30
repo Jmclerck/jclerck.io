@@ -1,0 +1,19 @@
+FROM ubuntu:xenial
+
+## Create a temporary working directory
+  RUN mkdir /root/tmp
+
+## Set working directory to a tmp directory
+  WORKDIR /root/tmp
+
+## Install prerequisites
+  RUN apt-get update && apt-get install -y nginx wget
+
+## Copy NGINX Configuration
+  COPY config/http/nginx.conf /etc/nginx/nginx.conf
+
+## Copy the static contents
+  COPY html /usr/share/nginx/html
+
+## Start NGINX
+  CMD service nginx start

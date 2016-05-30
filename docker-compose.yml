@@ -1,8 +1,46 @@
 version: '2'
 services:
-  server:
-    build: .
-    container_name: postgres
+  development:
+    build:
+      args:
+        MODE: "development"
+      context: .
+      dockerfile: Dockerfile.development
+    container_name: development
+    links:
+      - node
+    ports:
+      - '80:80'
+    volumes:
+      - 'html:/usr/share/nginx/html'
+  couch:
+    build:
+      context: .
+      dockerfile: Dockerfile.couch
+    container_name: couch
+    expose:
+      - '5984'
+  nginx:
+    build:
+      args:
+        MODE: "production"
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    links:
+      - node
     ports:
       - '443:443'
-      - '80:80'
+    volumes:
+      - 'etc/letsencrypt:/etc/letsencrypt'
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    container_name: passenger
+    expose:
+      - '3000'
+    links:
+      - couch
+    volumes:
+      - 'src:/root/passenger/src'

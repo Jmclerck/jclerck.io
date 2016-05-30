@@ -1,0 +1,65 @@
+## Ref: http://www.clock.co.uk/blog/a-guide-on-how-to-cache-npm-install-with-docker
+  FROM ubuntu:trusty
+
+## Accept arguments from docker-compose
+  ARG MODE
+
+## Create a temporary working directory
+  RUN mkdir /root/passenger
+  RUN mkdir /root/tmp
+
+## Set working directory to a tmp directory
+  WORKDIR /root/tmp
+
+# --- Install passenger standalone --- #
+
+## Add passenger key and install prerequisites
+  RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+  RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
+
+## Add passenger APT repository
+  RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+
+## Install Passenger + Node.js prerequisites
+  RUN apt-get update && apt-get install -y build-essential curl passenger python
+
+# --- Install node.js --- #
+
+## Add Node PPA
+  RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+  RUN bash nodesource_setup.sh
+
+## Install Node v6.x, apt-get update is run by script
+  RUN apt-get install -y nodejs
+
+# --- Install npm modules --- #
+
+## Move package.json to tmp directory
+  COPY package.json /root/tmp/package.json
+
+## Install npm dependencies
+  RUN npm install
+
+  ## Move node modules into place
+    RUN cp -rf node_modules /root/passenger
+    RUN cp package.json /root/passenger
+
+# --- Copy passenger server code --- #
+
+## Set working directory to final content location
+  WORKDIR /root/passenger
+
+## Copy the static contents and node server
+  COPY src /root/passenger/src
+
+## Copy nodemon configuration
+  COPY config/monitor.js /root/passenger/monitor.js
+
+## Run the babel build task
+  RUN npm run build
+
+## Start passenger
+  RUN passenger start --app-type "node" --daemonize --environment ${MODE} --startup-file "dist/app.js"
+
+## Run nodemon watcher
+  CMD npm start
