@@ -1,8 +1,4 @@
-## Ref: http://www.clock.co.uk/blog/a-guide-on-how-to-cache-npm-install-with-docker
-  FROM ubuntu:trusty
-
-## Accept arguments from docker-compose
-  ARG MODE
+FROM ubuntu:trusty
 
 ## Create a temporary working directory
   RUN mkdir /root/passenger
@@ -54,12 +50,6 @@
 
 ## Copy nodemon configuration
   COPY config/monitor.js /root/passenger/monitor.js
-
-## Run the babel build task
-  RUN npm run build
-
-## Start passenger
-  RUN passenger start --app-type "node" --daemonize --environment ${MODE} --startup-file "dist/app.js"
 
 ## Run nodemon watcher
   CMD npm start

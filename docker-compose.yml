@@ -2,8 +2,6 @@ version: '2'
 services:
   development:
     build:
-      args:
-        MODE: "development"
       context: .
       dockerfile: Dockerfile.development
     container_name: development
@@ -22,8 +20,6 @@ services:
       - '5984'
   nginx:
     build:
-      args:
-        MODE: "production"
       context: .
       dockerfile: Dockerfile.nginx
     container_name: nginx
@@ -38,6 +34,8 @@ services:
       context: .
       dockerfile: Dockerfile.node
     container_name: passenger
+    environment:
+      MODE: ${ENV}
     expose:
       - '3000'
     links:

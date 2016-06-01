@@ -2,7 +2,6 @@
 
 import parser from 'body-parser';
 import express from 'express';
-import fs from 'fs';
 import http from 'http';
 
 const API_KEY = 'AIzaSyCgoE5ehkC-r8TdeYkbQLHyaj--qhlH4_0';

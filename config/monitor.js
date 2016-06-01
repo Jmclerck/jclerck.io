@@ -1,13 +1,30 @@
+/* eslint-disable no-console */
+
 'use strict';
 
-var nodemon = require('nodemon');
+import spawn from 'child_process';
+import nodemon from 'nodemon';
 
-if (process.env.ENV === 'development') {
+let ls = spawn.exec(`passenger start --app-type node --environment ${process.env.ENV} --startup-file dist/app.js`);
+
+ls.stdout.on('data', (data) => {
+  console.log(data);
+});
+
+ls.stderr.on('data', (data) => {
+  console.log(data);
+});
+
+ls.on('close', (code) => {
+  console.log(`Child exited with code ${code}`);
+});
+
+if (process.env.ENV !== 'production') {
   nodemon({
     watch: [
       'src',
     ],
-    exec: 'babel-node; passenger-config restart-app /dist',
+    exec: 'npm run build; passenger-config restart-app /root/passenger',
   });
 
   nodemon.on('start', function () {
