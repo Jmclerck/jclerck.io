@@ -9,6 +9,7 @@ chmod a+x certbot-auto
 
 ## Diffie Hellman params
 openssl dhparam -out dhparams.pem 4096
+mv dhparams.pem ..
 
 ## Docker prereqs
 apt-get update && sudo apt-get install -y apt-transport-https ca-certificates
