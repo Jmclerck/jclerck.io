@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile.node
     container_name: passenger
     environment:
-      MODE: ${ENV}
+      MODE: ${NODE_ENV}
     expose:
       - '3000'
     links:
