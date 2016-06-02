@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export ENV=production
+export NODE_ENV=production
 
 ## Certbot
 wget https://dl.eff.org/certbot-auto

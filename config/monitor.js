@@ -8,7 +8,7 @@ import npm from 'npm';
 
 var args = [
   '--app-type node',
-  `--environment ${process.env.ENV}`,
+  `--environment ${process.env.NODE_ENV}`,
   '--startup-file dist/app.js',
 ];
 
@@ -31,7 +31,7 @@ passenger.on('close', (code) => {
   console.log(`child process exited with code ${code}`);
 });
 
-if (process.env.ENV === 'production'){
+if (process.env.NODE_ENV === 'production'){
   // In production we only want to kick off the build step once
   npm.load({}, function (err) {
     if (!err) {
