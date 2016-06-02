@@ -22,6 +22,7 @@
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "nodemon": "^1.9.2",
+    "npm": "^3.9.3",
     "pouchdb": "^5.3.2"
   },
   "babel": {
