@@ -1,7 +1,7 @@
 {
-  "name": "node-push",
+  "name": "express-push-reg",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express server to handle push notification registration",
   "main": "app.js",
   "scripts": {
     "build": "babel src -d dist",
