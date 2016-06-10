@@ -5,7 +5,7 @@ export NODE_ENV=production
 ## Certbot
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
-./certbot-auto certonly --agree-tos --non-interactive --quiet --standalone --email j.m.clerck@icloud.com -d jclerck.co.uk -d jclerck.io -d www.jclerck.co.uk -d www.jclerck.io
+./certbot-auto certonly --agree-tos --non-interactive --quiet --standalone --email j.m.clerck@icloud.com -d jclerck.io -d www.jclerck.io -d jclerck.co.uk -d www.jclerck.co.uk
 
 ## Diffie Hellman params
 openssl dhparam -out dhparams.pem 4096
