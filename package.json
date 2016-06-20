@@ -1,29 +1,30 @@
 {
   "name": "express-push-reg",
   "version": "1.0.0",
+  "author": "Jon Clerck <jmclerck@icloud.com>",
   "description": "Express server to handle push notification registration",
+  "keywords": [],
+  "license": "MIT",
   "main": "app.js",
+  "repository": "https://github.com/Jmclerck/jclerck.io",
   "scripts": {
     "build": "babel src -d dist",
     "start": "babel-node monitor.js"
   },
-  "keywords": [],
-  "author": "Jon Clerck <jmclerck@icloud.com>",
-  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.7.7",
     "babel-eslint": "^6.0.4",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-0": "^6.5.0",
-    "eslint": "^2.8.0",
-    "eslint-config-connections": "^4.0.0"
+    "eslint": "^2.8.0"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "nodemon": "^1.9.2",
     "npm": "^3.9.3",
-    "pouchdb": "^5.3.2"
+    "pouchdb": "^5.3.2",
+    "whatwg-fetch": "^1.0.0"
   },
   "babel": {
     "presets": [
@@ -31,21 +32,5 @@
       "stage-0"
     ],
     "plugins": []
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-connections",
-    "env": {
-      "es6": true,
-      "browser": true,
-      "node": true
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
-    },
-    "rules": {
-      "no-plusplus": 2
-    }
   }
 }

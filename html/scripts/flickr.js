@@ -1,5 +1,7 @@
 'use strict';
 
+import 'whatwg-fetch';
+
 let maxImages = 10;
 let method = 'flickr.photos.search';
 let apiKey = '10ee7fb7b6863856e45325ea1c26a9b2';
