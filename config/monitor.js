@@ -14,29 +14,29 @@ var args = [
 
 var opts = {
   cwd: '.',
-  shell: true
+  shell: true,
 };
 
-let passenger = proc.spawn('passenger start', args, opts);
+const passenger = proc.spawn('passenger start', args, opts);
 
-passenger.stdout.on('data', (data) => {
+passenger.stdout.on('data', data => {
   console.log(`stdout: ${data}`);
 });
 
-passenger.stderr.on('data', (data) => {
+passenger.stderr.on('data', data => {
   console.log(`stderr: ${data}`);
 });
 
-passenger.on('close', (code) => {
+passenger.on('close', code => {
   console.log(`child process exited with code ${code}`);
 });
 
-if (process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
   // In production we only want to kick off the build step once
-  npm.load({}, function (err) {
+  npm.load({}, err => {
     if (!err) {
       npm.commands.run([
-        'build'
+        'build',
       ]);
     }
   });
@@ -50,11 +50,11 @@ if (process.env.NODE_ENV === 'production'){
       'src',
     ],
     exec: 'npm run build; passenger-config restart-app .',
-  }).on('start', function () {
+  }).on('start', () => {
     console.log('App has started');
-  }).on('quit', function () {
+  }).on('quit',  () => {
     console.log('App has quit');
-  }).on('restart', function (files) {
+  }).on('restart', files => {
     console.log('App restarted due to: ', files);
   });
 }
