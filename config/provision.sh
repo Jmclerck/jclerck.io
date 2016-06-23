@@ -7,9 +7,6 @@ wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 ./certbot-auto certonly --agree-tos --non-interactive --quiet --standalone --email j.m.clerck@icloud.com -d jclerck.io -d www.jclerck.io -d jclerck.co.uk -d www.jclerck.co.uk
 
-## Diffie Hellman params
-openssl dhparam -out dhparams.pem 4096
-
 ## Docker prereqs
 apt-get update && sudo apt-get install -y apt-transport-https ca-certificates
 

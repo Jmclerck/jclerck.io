@@ -1,11 +1,5 @@
 FROM ubuntu:xenial
 
-## Create a temporary working directory
-  RUN mkdir /root/tmp
-
-## Set working directory to a tmp directory
-  WORKDIR /root/tmp
-
 ## Install prerequisites
   RUN apt-get update && apt-get install -y nginx
 
