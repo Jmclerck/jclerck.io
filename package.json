@@ -9,7 +9,9 @@
   "repository": "https://github.com/Jmclerck/jclerck.io",
   "scripts": {
     "build": "babel src -d dist",
-    "start": "babel-node monitor.js"
+    "start": "babel-node monitor.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
@@ -24,7 +26,8 @@
     "nodemon": "^1.9.2",
     "npm": "^3.9.3",
     "pouchdb": "^5.3.2",
-    "whatwg-fetch": "^1.0.0"
+    "whatwg-fetch": "^1.0.0",
+    "snyk": "^1.17.0"
   },
   "babel": {
     "presets": [
@@ -32,5 +35,6 @@
       "stage-0"
     ],
     "plugins": []
-  }
+  },
+  "snyk": true
 }
