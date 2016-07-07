@@ -1,0 +1,8 @@
+version: v1.5.0
+ignore: {}
+patch:
+  'npm:minimatch:20160620':
+    - pouchdb > leveldown > prebuild > node-ninja > minimatch:
+        patched: '2016-07-07T19:09:37.218Z'
+    - pouchdb > leveldown > prebuild > node-ninja > glob > minimatch:
+        patched: '2016-07-07T19:09:37.218Z'
