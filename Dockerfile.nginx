@@ -7,16 +7,13 @@ FROM ubuntu:xenial
   WORKDIR /root/tmp
 
 ## Install prerequisites
-  RUN apt-get update && apt-get install -y nginx openssl
+  RUN apt-get update && apt-get install -y nginx
 
 ## Copy NGINX Configuration
   COPY config/https/nginx.conf /etc/nginx/nginx.conf
 
-## Generate a new Diffie Hellman parameters
-  RUN openssl dhparam -out dhparams.pem 4096
-
-## Move Diffie Hellman params
-  RUN mv dhparams.pem /etc/nginx/dhparams.pem
+## Copy Diffie Hellman params
+  COPY dhparams.pem /etc/nginx/dhparams.pem
 
 ## Copy the static contents
   COPY html /usr/share/nginx/html

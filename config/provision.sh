@@ -7,10 +7,13 @@ wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 ./certbot-auto certonly --agree-tos --non-interactive --quiet --standalone --email j.m.clerck@icloud.com -d jclerck.io -d www.jclerck.io -d jclerck.co.uk -d www.jclerck.co.uk
 
-## Docker prereqs
+## Diffie Hellman params
+openssl dhparam -out dhparams.pem 4096
+
+## Docker pre-requisites
 apt-get update && sudo apt-get install -y apt-transport-https ca-certificates
 
-## Docker reop
+## Docker repository
 apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 echo deb https://apt.dockerproject.org/repo ubuntu-xenial main > /etc/apt/sources.list.d/docker.list
 
