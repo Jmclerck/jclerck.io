@@ -7,7 +7,7 @@ FROM ubuntu:xenial
   WORKDIR /root/tmp
 
 ## Install prerequisites
-  RUN apt-get update && apt-get install -y nginx
+  RUN apt-get update && apt-get install -y nginx openssl
 
 ## Copy NGINX Configuration
   COPY config/https/nginx.conf /etc/nginx/nginx.conf

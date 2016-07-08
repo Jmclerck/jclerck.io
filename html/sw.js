@@ -1,8 +1,8 @@
 'use strict';
 
-let cacheVersion = '1.2.2';
-let cacheName = `${self.location.host}-${cacheVersion}`;
-let cacheContents = [
+const cacheVersion = '1.2.3';
+const cacheName = `${self.location.host}-${cacheVersion}`;
+const cacheContents = [
   '/',
   'app.js',
   'index.html',
@@ -15,7 +15,7 @@ self.onactivate = event => {
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
-        let cacheDeletions = cacheNames
+        const cacheDeletions = cacheNames
           .filter(cache => cache !== cacheName)
           .map(cache => caches.delete(cache));
 
@@ -34,8 +34,8 @@ self.oninstall = event => {
 };
 
 self.onfetch = event => {
-  let offlineResponse = () => {
-    let isImage = event.request.headers.get('Accept').includes('image');
+  const offlineResponse = () => {
+    const isImage = event.request.headers.get('Accept').includes('image');
 
     return isImage ? caches.match('images/404.png') : new Response('<h1>Offline</h1', {
       headers: {
@@ -44,24 +44,16 @@ self.onfetch = event => {
     });
   };
 
-  let cacheResponse = response => {
+  const cacheResponse = response => {
     caches.open(cacheName)
       .then(cache => cache.put(event.request, response));
 
     return response.clone();
   };
 
-  let respondFromNetwork = () => {
-    return fetch(event.request)
-      .then(cacheResponse);
-  };
+  const respondFromNetwork = () => fetch(event.request).then(cacheResponse);
 
-  let respondFromCache = () => {
-    return caches.match(event.request)
-      .then(response => {
-        return response ? response : offlineResponse();
-      });
-  };
+  const respondFromCache = () => caches.match(event.request).then(response => response ? response : offlineResponse());
 
   event.respondWith(
     respondFromNetwork(event).catch(respondFromCache)
@@ -79,9 +71,9 @@ self.onpush = event => {
     data = event.data.json();
   }
 
-  let title = data.title || 'notification';
-  let body = data.message || 'notification';
-  let icon = 'images/notification.png';
+  const title = data.title || 'notification';
+  const body = data.message || 'notification';
+  const icon = 'images/notification.png';
 
   self.registration.showNotification(title, {
     body,

@@ -1,8 +1,86 @@
-version: v1.5.0
+version: v1.5.2
 ignore: {}
 patch:
   'npm:minimatch:20160620':
     - pouchdb > leveldown > prebuild > node-ninja > minimatch:
         patched: '2016-07-07T19:09:37.218Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
     - pouchdb > leveldown > prebuild > node-ninja > glob > minimatch:
         patched: '2016-07-07T19:09:37.218Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
+    - npm > node-gyp > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
+    - npm > npm-registry-client > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
+    - npm > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
+    - npm > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
+    - npm > fs-vacuum > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+      babel-cli > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
+        patched: '2016-07-08T17:05:36.210Z'
+    - npm > fstream-npm > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > read-installed > read-package-json > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > read-package-json > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > read-package-tree > read-package-json > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > init-package-json > read-package-json > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > fstream-npm > fstream-ignore > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > init-package-json > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - pouchdb > websql > sqlite3 > node-pre-gyp > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > node-gyp > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > node-gyp > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > node-gyp > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
+    - npm > node-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-08T17:00:42.465Z'
