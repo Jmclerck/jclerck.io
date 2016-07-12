@@ -30,7 +30,7 @@
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "nodemon": "^1.9.2",
-    "npm": "^3.9.3",
+    "npm": "^3.10.5",
     "pouchdb": "^5.4.4",
     "snyk": "^1.17.0",
     "whatwg-fetch": "^1.0.0"
