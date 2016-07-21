@@ -1,6 +1,0 @@
-version: v1.5.2
-ignore: {}
-patch:
-  'npm:marked:20150520':
-    - greenkeeper > cli-md > marked:
-        patched: '2016-07-21T13:28:05.991Z'
