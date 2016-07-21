@@ -1,55 +1,29 @@
 FROM ubuntu:trusty
 
-## Create a temporary working directory
-  RUN mkdir /root/passenger
-  RUN mkdir /root/tmp
+# Set working directory to final content location
+WORKDIR /root
 
-## Set working directory to a tmp directory
-  WORKDIR /root/tmp
+# Install cURL
+RUN apt-get update && apt-get install -y curl
 
-# --- Install passenger standalone --- #
+# Add Node PPA
+RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
 
-  ## Add passenger key and install prerequisites
-    RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
-    RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
+# Install Node v6.x
+RUN apt-get install -y nodejs
 
-  ## Add passenger APT repository
-    RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+# Copy the static contents
+COPY server /root/
 
-  ## Install Passenger + Node.js prerequisites
-    RUN apt-get update && apt-get install -y build-essential curl passenger python
+# Build startup script
+RUN echo "nginx; cd /root; npm run watch" >> /tmp/startup.sh
 
-# --- Install node.js --- #
+# Add executable permissions to start script
+RUN chmod +x /tmp/startup.sh
 
-  ## Add Node PPA
-    RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
-    RUN bash nodesource_setup.sh
+# Install npm dependencies
+RUN npm install --unsafe-perm
 
-  ## Install Node v6.x, apt-get update is run by script
-    RUN apt-get install -y nodejs
-
-# --- Install npm modules --- #
-
-  ## Move package.json to tmp directory
-    COPY package.json /root/tmp/
-
-  ## Install npm dependencies
-    RUN npm install
-
-  ## Move node modules into place
-    RUN cp -rf node_modules /root/passenger
-    RUN cp package.json /root/passenger
-
-# --- Copy passenger server code --- #
-
-  ## Set working directory to final content location
-    WORKDIR /root/passenger
-
-  ## Copy the static contents and node server
-    COPY src /root/passenger/src
-
-  ## Copy nodemon configuration
-    COPY config/monitor.js /root/passenger/
-
-## Start passenger
-  CMD npm start
+# Run start script
+CMD sh /tmp/startup.sh

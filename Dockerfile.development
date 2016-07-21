@@ -1,13 +1,32 @@
 FROM ubuntu:xenial
 
-## Install prerequisites
-  RUN apt-get update && apt-get install -y nginx
+# Set working directory to content location
+WORKDIR /usr/share/nginx/html
 
-## Copy NGINX Configuration
-  COPY config/http/nginx.conf /etc/nginx/nginx.conf
+# Install prerequisites
+RUN apt-get update && apt-get install -y curl nginx
 
-## Copy the static contents
-  COPY html /usr/share/nginx/html
+# Add Node PPA
+RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
 
-## Start NGINX
-  CMD service nginx start
+# Install Node v6.x
+RUN apt-get install -y nodejs
+
+# Copy NGINX Configuration
+COPY config/http/nginx.conf /etc/nginx/nginx.conf
+
+# Copy the static contents
+COPY static /usr/share/nginx/html/
+
+# Build startup script
+RUN echo "cd /usr/share/nginx/html; nginx; npm run watch" >> /tmp/startup.sh
+
+# Add executable permissions to start script
+RUN chmod +x /tmp/startup.sh
+
+# Install npm dependencies
+RUN npm install --unsafe-perm
+
+# Run start script
+CMD sh /tmp/startup.sh

@@ -1,16 +1,16 @@
 FROM ubuntu:xenial
 
-## Create couch run directory
-  RUN mkdir /run/couchdb
+# Create couch run directory
+RUN mkdir /run/couchdb
 
-## Install CouchDB prerequisites
-  RUN apt-get update && apt-get install python-software-properties software-properties-common -y
+# Install CouchDB prerequisites
+RUN apt-get update && apt-get install python-software-properties software-properties-common -y
 
-## Add CouchDB repository
-  RUN add-apt-repository ppa:couchdb/stable -y
+# Add CouchDB repository
+RUN add-apt-repository ppa:couchdb/stable -y
 
-## Install CouchDb
-  RUN apt-get update && apt-get install -y couchdb
+# Install CouchDb
+RUN apt-get update && apt-get install -y couchdb
 
 # Start CouchDB
-  CMD couchdb start
+CMD couchdb start

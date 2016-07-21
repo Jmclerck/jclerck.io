@@ -8,16 +8,18 @@ services:
     links:
       - node
     ports:
-      - '80:80'
+      - 80:80
     volumes:
-      - './html:/usr/share/nginx/html'
+      - ./static:/usr/share/nginx/html
+      - /usr/share/nginx/html/dist
+      - /usr/share/nginx/html/node_modules
   couch:
     build:
       context: .
       dockerfile: Dockerfile.couch
     container_name: couch
     expose:
-      - '5984'
+      - 5984
   nginx:
     build:
       context: .
@@ -26,19 +28,21 @@ services:
     links:
       - node
     ports:
-      - '443:443'
+      - 443:443
     volumes:
-      - '/etc/letsencrypt:/etc/letsencrypt'
+      - /etc/letsencrypt:/etc/letsencrypt
   node:
     build:
       context: .
       dockerfile: Dockerfile.node
-    container_name: passenger
+    container_name: node
     environment:
       NODE_ENV: ${NODE_ENV}
     expose:
-      - '3000'
+      - 3000
     links:
       - couch
     volumes:
-      - './src:/root/passenger/src'
+      - ./server:/root
+      - /root/dist
+      - /root/node_modules
