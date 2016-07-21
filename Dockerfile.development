@@ -17,10 +17,10 @@ RUN apt-get install -y nodejs
 COPY config/http/nginx.conf /etc/nginx/nginx.conf
 
 # Copy the static contents
-COPY static /usr/share/nginx/html/
+COPY static /usr/share/nginx/html
 
 # Build startup script
-RUN echo "cd /usr/share/nginx/html; nginx; npm run watch" >> /tmp/startup.sh
+RUN echo "nginx; cd /usr/share/nginx/html; npm run watch" >> /tmp/startup.sh
 
 # Add executable permissions to start script
 RUN chmod +x /tmp/startup.sh

@@ -26,7 +26,7 @@ RUN echo "nginx; cd /usr/share/nginx/html; npm run lint; npm run build" >> /tmp/
 RUN chmod +x /tmp/startup.sh
 
 # Copy the static contents
-COPY static /usr/share/nginx/html/
+COPY static /usr/share/nginx/html
 
 # Install npm dependencies
 RUN npm install --unsafe-perm

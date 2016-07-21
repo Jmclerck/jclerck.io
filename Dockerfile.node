@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 
 # Set working directory to final content location
 WORKDIR /root
@@ -14,10 +14,10 @@ RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs
 
 # Copy the static contents
-COPY server /root/
+COPY server /root
 
 # Build startup script
-RUN echo "nginx; cd /root; npm run watch" >> /tmp/startup.sh
+RUN echo "cd /root; npm run watch" >> /tmp/startup.sh
 
 # Add executable permissions to start script
 RUN chmod +x /tmp/startup.sh
