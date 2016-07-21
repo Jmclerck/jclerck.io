@@ -1,6 +1,6 @@
 [submodule "server"]
 	path = server
-	url = git@github.com:Jmclerck/node-server.git
+	url = git@github.com:Jmclerck/plushy.git
 [submodule "static"]
 	path = static
-	url = git@github.com:Jmclerck/static-content.git
+	url = git@github.com:Jmclerck/jclerck-io-static.git
