@@ -1,0 +1,12 @@
+[submodule "static-content"]
+	path = static-content
+	url = git@github.com:Jmclerck/static-content.git
+[submodule "node-server"]
+	path = node-server
+	url = git@github.com:Jmclerck/node-server.git
+[submodule "server"]
+	path = server
+	url = git@github.com:Jmclerck/node-server.git
+[submodule "static"]
+	path = static
+	url = git@github.com:Jmclerck/static-content.git
