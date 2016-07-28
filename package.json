@@ -35,7 +35,7 @@
     "xo": "^0.16.0"
   },
   "dependencies": {
-    "systemjs": "^0.19.31",
+    "systemjs": "^0.19.32",
     "whatwg-fetch": "^1.0.0",
     "snyk": "^1.17.1"
   },
