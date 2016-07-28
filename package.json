@@ -37,7 +37,7 @@
   "dependencies": {
     "systemjs": "^0.19.31",
     "whatwg-fetch": "^1.0.0",
-    "snyk": "^1.17.1"
+    "snyk": "^1.17.2"
   },
   "babel": {
     "presets": [
