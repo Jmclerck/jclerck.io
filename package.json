@@ -17,11 +17,7 @@
   "scripts": {
     "build": "babel src -d dist --source-maps",
     "lint": "xo --fix",
-    "test": "snyk test",
-    "watch": "watch 'npm run lint; npm run build' src",
-    "snyk-monitor": "snyk monitor",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "watch": "watch 'npm run lint; npm run build' src"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -36,8 +32,7 @@
   },
   "dependencies": {
     "systemjs": "^0.19.36",
-    "whatwg-fetch": "^1.0.0",
-    "snyk": "^1.17.5"
+    "whatwg-fetch": "^1.0.0"
   },
   "babel": {
     "presets": [
@@ -77,6 +72,5 @@
       "navigator",
       "self"
     ]
-  },
-  "snyk": true
+  }
 }
