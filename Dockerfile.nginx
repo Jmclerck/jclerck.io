@@ -20,7 +20,7 @@ COPY config/https/nginx.conf /etc/nginx/nginx.conf
 COPY dhparams.pem /etc/nginx/dhparams.pem
 
 # Build startup script
-RUN echo "nginx; cd /usr/share/nginx/html; npm run lint; npm run build" >> /tmp/startup.sh
+RUN echo "echo 'Docker: starting nginx'; cd /usr/share/nginx/html; npm run lint; npm run build; nginx" >> /tmp/startup.sh
 
 # Add executable permissions to start script
 RUN chmod +x /tmp/startup.sh
