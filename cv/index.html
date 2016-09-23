@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Jonathan Clerck - CV</title>
+		<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7434334/6816772/css/fonts.css"/>
+		<link rel='stylesheet' type="text/css" href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'/>
+		<style>
+			:root {
+				--bg-colour: white;
+				--fg-colour: black;
+				--supported: visible;
+			}
+
+			body {
+				background-color: var(--bg-colour);
+				color: var(--fg-colour);
+				font-size: 17px;
+				font-family: Operator, Hack, -apple-system, Helvetica Neue, Arial;
+				margin: 0;
+			}
+
+			header h1 {
+				flex: 85%;
+			}
+
+			h1 {
+				font-size: 3rem;
+			}
+
+			h2 {
+				color: yellowgreen;
+				font-size: 2rem;
+				margin: 0.5rem;
+			}
+
+			pre {
+				white-space: inherit;
+			}
+
+			section {
+				border-top: 1px solid hotpink;
+			}
+
+			.colours,	.colours .selection {
+				visibility: hidden;
+			}
+
+			.intro {
+				background-color: rgba(255, 105, 180, 0.25);
+				margin: 0;
+				padding: 10px;
+				width: 100vw;
+			}
+
+			.intro span {
+				margin-right: 10px;
+				background-color: transparent;
+			}
+
+			.intro span:not([class=""]):first-of-type,
+			.intro span[class=""] + span:not([class=""]) {
+				background-color: rgba(153, 205, 50, 0.25);
+			}
+
+			.skills {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.skills ul {
+				flex: 50%;
+				list-style: none;
+			}
+
+			.skills li:nth-child(even) {
+				margin: 0.25rem 0 1rem 0;
+				text-indent: 1.5rem;
+				list-style: none;
+			}
+
+			.skills li:nth-child(even):before {
+				content: "➜		";
+				color: hotpink;
+				font-size: 0.8rem;
+			}
+
+			.skills li:nth-child(odd):before {
+				content: "•		";
+				color: hotpink;
+				font-size: 0.8rem;
+			}
+
+			header {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			header div {
+				display: flex;
+				flex: 100%;
+			}
+
+			header .dates,
+			header .position {
+				flex: 50%;
+			}
+
+			header .logo {
+				flex: 25%;
+			}
+
+			header .company {
+				flex: 75%;
+				text-align: center;
+			}
+
+			@supports (--foo: green) {
+				.colours {
+					flex: 15%;
+					list-style: none;
+					margin: auto 0;
+					padding: 0;
+					visibility: visible;
+				}
+
+				.colours li:first-child {
+					font-size: 0.8rem;
+					text-decoration: underline;
+				}
+
+				.colours .selection:before {
+					content: attr(data-bg-colour);
+				}
+
+				.colours .selection {
+					background-color: transparent;
+					border: none;
+					color: var(--fg-colour);
+					visibility: var(--supported);
+					outline: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<pre class="intro"></pre>
+			<h1>Jonathan Martin Clerck</h1>
+			<ul class="colours">
+				<li>background</li>
+				<li>
+					<button class='selection' data-bg-colour="white" data-fg-colour=black"></button>
+				</li>
+				<li>
+					<button class='selection' data-bg-colour="red" data-fg-colour=black"></button>
+				</li>
+				<li>
+					<button class='selection' data-bg-colour="green" data-fg-colour="black"></button>
+				</li>
+				<li>
+					<button class='selection' data-bg-colour="blue" data-fg-colour="white"></button>
+				</li>
+			</ul>
+		</header>
+		<section id="about">
+			<h2>About</h2>
+		</section>
+		<section id="skills">
+			<h2>Skills</h2>
+			<div class="skills">
+				<ul>
+					<li>Languages</li>
+					<li>Javascript (ES2015+), CSS, HTML, XML, PHP, C++</li>
+					<li>Technologies</li>
+					<li>Angular, Angular 2, React, Web Components</li>
+					<li>Tools</li>
+					<li>Docker, Git, Node.js</li>
+				</ul>
+			</div>
+		</section>
+		<section id="experience">
+			<h2>Experience</h2>
+			<div>
+				<header>
+					<div>
+						<object class="logo" data="../images/logos/ncr.svg" type="image/svg+xml"></object>
+						<h3 class="company">NCR Edinburgh</h3>
+					</div>
+					<p class="dates">27th July 2015 - Present</p>
+					<p class="position">Software Developer</p>
+				</header>
+				<pre>
+					I worked on the development of an AngularJS and HTML5 web application to produce
+					web content. The application allows the user to create rich web-technology based
+					user interfaces for ATMs. In order to build these interfaces, the user can
+					create and import “components”, which can then be manipulated and configured
+					within the application. I was solely responsible for the development of a client
+					-side validation module, which analyses “components” during import into the
+					application. This ensures that they are valid and meet the application’s runtime
+					requirements. I was made interim Scrum Master of the team for several months
+					during a colleague’s leave of absence.
+				</pre>
+			</div>
+			<div>
+				<header>
+					<div>
+						<img class="logo" alt="Logo of SISCOG - Sistemas Cognitivos" src="../images/logos/siscog.jpg">
+						<h3 class="company">SISCOG - Sistemas Cognitivos</h3>
+					</div>
+					<p class="dates">3rd February 2014 - July 24th 2015</p>
+					<p class="position">Software Developer</p>
+				</header>
+				<pre>
+					My role as a Software Developer was to maintain and develop the client-side Web Applications using JavaScript, HTML and CSS.
+					I worked on a number of projects during this time including:
+				</pre>
+				<ul>
+					<li>Mobile first responsive interface using pure JavaScript, CSS and media queries.</li>
+					<li>Application and resource optimisation through the use of Gulp, Grunt and Broccoli build tools.</li>
+					<li>Development of a prototype web-based workflow planning application.</li>
+					<li>Development of prototype applications using Angular, Backbone and Ember</li>
+					<li>Development of a Mobile Web Application using Ionic Framework.</li>
+				</ul>
+			</div>
+		</section>
+		<script>
+			document.addEventListener('click', function (event) {
+				var bgColour = event.target.getAttribute('data-bg-colour');
+				document.documentElement.style.setProperty('--bg-colour', bgColour);
+
+				var fgColour = event.target.getAttribute('data-fg-colour');
+				document.documentElement.style.setProperty('--fg-colour', fgColour);
+			});
+
+			if ('speechSynthesis' in window) {
+				var synth = window.speechSynthesis;
+				var intro = document.querySelector('.intro');
+				var text = `Welcome, this is my CV. If you don't want to hear this again, please press Enter to accept cookies.`;
+				var voices = synth.getVoices().filter(voice => voice.lang === navigator.language && voice.default);
+
+				text.split(/\s+/g).forEach(function (word) {
+					var sp = document.createElement('span');
+					sp.innerText = word;
+					sp.className = word.match(/\w+/g).join('');
+					intro.appendChild(sp);
+				});
+
+				var utterance = new SpeechSynthesisUtterance(text);
+				utterance.voice = voices[0];
+				utterance.onboundary = function (event) {
+					var boundaryStart = event.charIndex;
+					var boundaryEnd = event.currentTarget.text.indexOf(' ', event.charIndex);
+
+					var nextWord = event.currentTarget.text.slice(boundaryStart, boundaryEnd)
+					var nextClass = nextWord.match(/\w+/g).join('');
+					var nextElem = intro.querySelector(`.${nextClass}`);
+					if (nextElem) {
+						nextElem.classList.remove(nextElem.classList);
+					}
+				}
+
+				synth.speak(utterance);
+			}
+		</script>
+	</body>
+</html>
