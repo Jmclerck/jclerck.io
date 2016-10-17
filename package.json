@@ -29,6 +29,7 @@
     "xo": "^0.16.0"
   },
   "dependencies": {
+    "normalize.css": "^5.0.0",
     "systemjs": "^0.19.39",
     "whatwg-fetch": "^1.0.0"
   },
