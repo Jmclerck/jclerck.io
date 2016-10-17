@@ -183,6 +183,10 @@ section {
 	content: "•		";
 }
 
+@-ms-viewport {
+	width: device-width;
+}
+
 @supports (--foo: green) {
 	.colours {
 		flex: 15%;
