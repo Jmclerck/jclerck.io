@@ -302,13 +302,14 @@
 			if (!visited) {
 				document.querySelector('.accept').addEventListener('click', function (event) {
 					document.querySelector('.cookies').remove();
-					setCookie()
+					setCookie();
 				});
 
 				document.addEventListener('keydown', function (event) {
 					if (event.code === "Enter") {
 						setCookie();
 						document.querySelector('.cookies').remove();
+						document.removeEventListener('keydown');
 					}
 				});
 
