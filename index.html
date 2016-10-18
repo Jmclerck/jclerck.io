@@ -275,6 +275,10 @@
 		<script>
 			var visited = false;
 
+			var setCookie = function () {
+				document.cookie="accepted=true";
+			}
+
 			if (document.cookie !== '') {
 				var list = document.cookie.split(';');
 
@@ -282,7 +286,7 @@
 					var item = item.split('=');
 
 					if (item[0].trim() === 'accepted') {
-						visited = item[1];
+						visited = !!item[1];
 					}
 				});
 			}
@@ -296,9 +300,15 @@
 			});
 
 			if (!visited) {
+				document.querySelector('.accept').addEventListener('click', function (event) {
+					document.querySelector('.cookies').remove();
+					setCookie()
+				});
+
 				document.addEventListener('keydown', function (event) {
 					if (event.code === "Enter") {
-						document.cookie="accepted=true";
+						setCookie();
+						document.querySelector('.cookies').remove();
 					}
 				});
 
