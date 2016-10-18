@@ -32,7 +32,7 @@
 				</li>
 			</ul>
 		</header>
-		<section id="about">
+		<!--<section id="about">
 			<header>
 				<h2>About</h2>
 				<button class="hide"></button>
@@ -58,7 +58,7 @@
 					strip steak.
 				</pre>
 			</div>
-		</section>
+		</section>-->
 		<section id="skills">
 			<header>
 				<h2>Skills</h2>
@@ -275,10 +275,6 @@
 		<script>
 			var visited = false;
 
-			var setCookie = function () {
-				document.cookie="accepted=true";
-			}
-
 			if (document.cookie !== '') {
 				var list = document.cookie.split(';');
 
@@ -300,18 +296,16 @@
 			});
 
 			if (!visited) {
-				document.querySelector('.accept').addEventListener('click', function (event) {
-					document.querySelector('.cookies').remove();
-					setCookie();
-				});
-
-				document.addEventListener('keydown', function (event) {
-					if (event.code === "Enter") {
-						setCookie();
+				var cookieAccept = function (event) {
+					if (event.code && event.code === 'Enter' || event.type === 'click') {
+						document.cookie="accepted=true";
 						document.querySelector('.cookies').remove();
-						document.removeEventListener('keydown');
+						document.removeEventListener('keydown', cookieAccept);
 					}
-				});
+				}
+
+				document.querySelector('.accept').addEventListener('click', cookieAccept);
+				document.addEventListener('keydown', cookieAccept);
 
 				if ('speechSynthesis' in window) {
 					var synth = window.speechSynthesis;
