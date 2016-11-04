@@ -1,0 +1,6 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/Jmclerck/plushy.git
+[submodule "static"]
+	path = static
+	url = https://github.com/Jmclerck/jclerck-io-static.git

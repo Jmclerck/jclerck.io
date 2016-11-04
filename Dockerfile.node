@@ -1,0 +1,29 @@
+FROM ubuntu:xenial
+
+# Set working directory to final content location
+WORKDIR /root
+
+# Install cURL
+RUN apt-get update && apt-get install -y curl
+
+# Add Node PPA
+RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+
+# Install Node v6.x
+RUN apt-get install -y nodejs
+
+# Copy the static contents
+COPY server /root
+
+# Build startup script
+RUN echo "cd /root; npm run watch" >> /tmp/startup.sh
+
+# Add executable permissions to start script
+RUN chmod +x /tmp/startup.sh
+
+# Install npm dependencies
+RUN npm install --unsafe-perm
+
+# Run start script
+CMD sh /tmp/startup.sh
