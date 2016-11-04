@@ -2,21 +2,20 @@
   "name": "jclerck.io",
   "version": "0.1.0",
   "author": "Jon Clerck <jmclerck@icloud.com>",
-  "description": "Jclerck.io Service Worker enabled Flickr demo",
+  "description": "",
   "keywords": [
-    "Feeds",
     "News",
     "Notifications",
-    "Offline",
-    "RSS",
-    "Really Simple Syndication"
+    "Offline"
   ],
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "https://github.com/Jmclerck/jclerck.io",
   "scripts": {
-    "build": "babel src -d dist --source-maps",
-    "lint": "xo --fix",
+    "babel": "babel src -d dist --source-maps",
+    "build": "npm run lint; npm run babel",
+    "lint": "xo '**/*.js' --fix",
+    "start": "list .",
     "watch": "watch 'npm run lint; npm run build' src"
   },
   "devDependencies": {
@@ -29,6 +28,7 @@
     "xo": "^0.16.0"
   },
   "dependencies": {
+    "list": "^0.8.2",
     "normalize.css": "^5.0.0",
     "systemjs": "^0.19.39",
     "whatwg-fetch": "^1.0.0"
@@ -40,8 +40,7 @@
     ],
     "plugins": [
       [
-        "transform-runtime",
-        {
+        "transform-runtime", {
           "polyfill": false
         }
       ],
@@ -52,14 +51,8 @@
   "xo": {
     "esnext": true,
     "rules": {
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ],
-      "babel/object-curly-spacing": [
-        1,
-        "always"
-      ]
+      "comma-dangle": [2, "always-multiline"],
+      "babel/object-curly-spacing": [1, "always"]
     },
     "global": [
       "Headers",
