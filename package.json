@@ -1,36 +1,42 @@
 {
   "name": "jclerck.io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Jon Clerck <jmclerck@icloud.com>",
   "description": "",
-  "keywords": [
-    "News",
-    "Notifications",
-    "Offline"
-  ],
+  "keywords": [],
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "server.js",
   "repository": "https://github.com/Jmclerck/jclerck.io",
   "scripts": {
-    "babel": "babel src -d dist --source-maps",
-    "build": "npm run lint; npm run babel",
-    "lint": "xo '**/*.js' --fix",
-    "start": "list .",
-    "watch": "watch 'npm run lint; npm run build' src"
+    "autoprefixr": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' public/styles/*.css -d public/dist/",
+    "babel": "babel public/src -d public/dist --source-maps",
+    "build": "npm run lint; npm run babel; npm run autoprefixr",
+    "lint": "xo --fix 'public/src/**/*.js'",
+    "monitor": "snyk monitor",
+    "now-build": "snyk auth $SNYK_TOKEN; npm run build; npm run monitor",
+    "postinstall": "snyk protect",
+    "start": "node .",
+    "test": "snyk test"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
     "babel-cli": "^6.10.1",
-    "babel-plugin-transform-es2015-modules-systemjs": "^6.11.5",
-    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.14.0",
     "babel-preset-stage-0": "^6.5.0",
-    "watch": "^1.0.1",
+    "postcss-cli": "^2.6.0",
     "xo": "^0.17.0"
   },
   "dependencies": {
-    "list": "^0.8.2",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "dropcap.js": "^1.0.1",
+    "express": "^4.14.0",
+    "http-auth": "^3.1.0",
+    "jsonwebtoken": "^7.1.9",
+    "ms": "^0.7.2",
     "normalize.css": "^5.0.0",
-    "systemjs": "^0.19.39",
+    "snyk": "^1.19.1",
     "whatwg-fetch": "^1.0.0"
   },
   "babel": {
@@ -38,21 +44,24 @@
       "latest",
       "stage-0"
     ],
-    "plugins": [
-      [
-        "transform-runtime", {
-          "polyfill": false
-        }
-      ],
-      "transform-es2015-modules-systemjs"
-    ],
+    "plugins": [],
     "sourceMaps": "inline"
   },
   "xo": {
     "esnext": true,
     "rules": {
-      "comma-dangle": [2, "always-multiline"],
-      "babel/object-curly-spacing": [1, "always"]
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
+      "object-curly-spacing": [
+        1,
+        "always"
+      ],
+      "operator-assignment": [
+        1,
+        "never"
+      ]
     },
     "global": [
       "Headers",
@@ -60,8 +69,10 @@
       "caches",
       "document",
       "fetch",
+      "google",
       "navigator",
-      "self"
+      "self",
+      "window"
     ]
   }
 }

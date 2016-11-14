@@ -1,0 +1,142 @@
+@-ms-viewport {
+	width: device-width;
+}
+
+@media(min-width: 320px) {
+	footer.ribbon,
+	header.ribbon {
+		display: none;
+	}
+
+	.content {
+		width: 100%;
+	}
+
+	.content > header {
+		background-image: url(../images/background.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		color: white
+	}
+
+	.content > header img {
+		display: none;
+	}
+
+	.calendar,
+	.map {
+		height: 200px;
+		margin: 5% auto;
+	}
+}
+
+@media(min-width: 768px) {
+	section > header {
+		display: flex;
+		flex-direction: column;
+		height: 300px;
+		shape-outside: circle(50%);
+		width: 300px;
+	}
+
+	header.ribbon {
+		display: initial;
+		height: 500px;
+		left: 0;
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		width: 500px;
+		z-index: -1;
+	}
+
+	header.ribbon img {
+		position: absolute;
+		transform-origin: center;
+		transform: scale(-1, 1) rotate(60deg) translate(6%, -76%);
+		width: 50%;
+		z-index: -1;
+	}
+
+	footer.ribbon {
+		bottom: 0;
+		display: initial;
+		height: 500px;
+		overflow: hidden;
+		position: fixed;
+		right: 0;
+		width: 500px;
+		z-index: -1;
+	}
+
+	footer.ribbon img {
+		position: absolute;
+		transform-origin: center;
+		transform: translate(163%, 138%) rotate(35deg);
+		width: 50%;
+		z-index: -1;
+	}
+
+	.content > header {
+		background-image: none;
+		color: black;
+	}
+
+	.content > header img {
+		display: initial;
+		margin: 0 25%;
+	}
+
+	.content {
+		margin-left: 25%;
+		width: 50%;
+	}
+
+	.calendar {
+		align-self: flex-end;
+		margin: 5% 0;
+	}
+
+	.map {
+		margin: auto 0;
+		width: 85%;
+	}
+
+	.where header {
+		float: left;
+	}
+
+	.when header {
+		float: right;
+	}
+}
+
+* {
+  box-sizing: border-box;
+	font-weight: 400;
+}
+
+body {
+	background-color: white;
+	font-family: "Chronicle Hairline Cond A", "Chronicle Hairline Cond B", -apple-system, Helvetica Neue, Arial;
+	font-style: italic;
+	height: 100vh;
+	width: 100vw;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+.content {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.when,
+.where {
+	overflow: hidden;
+	padding: 10px;
+}

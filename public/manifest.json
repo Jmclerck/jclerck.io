@@ -1,0 +1,21 @@
+{
+	"name": "Jclerck.io",
+	"short_name": "Jclerck.io",
+	"icons": [
+		{
+			"src": "images/icons/launcher-96.png",
+			"sizes": "96x96",
+			"type": "image/png"
+		}, {
+			"src": "images/icons/launcher-144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		}, {
+			"src": "images/icons/launcher-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	],
+	"display": "minimal-ui",
+	"gcm_sender_id": "745023362084"
+}

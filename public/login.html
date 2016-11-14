@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+
+		<title>Login</title>
+
+		<link rel="stylesheet" href="https://cloud.typography.com/7434334/6816772/css/fonts.css"/>
+		<link rel="stylesheet" href="node_modules/normalize.css/normalize.css"/>
+		<link rel="stylesheet" href="styles/login.css">
+	</head>
+	<body>
+		<form action="/token" method="POST">
+			<fieldset>
+				<label for="username">username</label>
+				<input id="username" name="username" type="text">
+			</fieldset>
+
+			<fieldset>
+				<label for="password">password</label>
+				<input id="password" name="password" type="password">
+			</fieldset>
+			<input type="submit" value="Login">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,213 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-colour: white;
+	--fg-colour: black;
+}
+
+body {
+	background-color: var(--bg-colour);
+	color: var(--fg-colour);
+	font-family: Operator Mono SSm, Hack, -apple-system, Helvetica Neue, Arial;
+	font-size: 17px;
+	font-weight: lighter;
+	margin: 0;
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+header h1 {
+	text-align: center;
+}
+
+header h1,
+header h2 {
+	flex: 85%;
+}
+
+header .company,
+header .dates,
+header .position {
+	flex: 1;
+	margin: 0;
+	text-align: inherit;
+}
+
+header .details {
+	height: 120px;
+	margin: auto;
+	text-align: center;
+}
+
+header .logo {
+	color: var(--fg-colour);
+	fill: currentcolor;
+	margin: 0 auto;
+	width: 100%;
+}
+
+header object.logo {
+	width: 50%;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	color: yellowgreen;
+	font-size: 2rem;
+	margin: 0.5rem;
+}
+
+pre {
+	font-family: inherit;
+	font-weight: inherit;
+	white-space: inherit;
+}
+
+section {
+	border-top: 1px solid hotpink;
+}
+
+.accept {
+	background-color: black;
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	margin: 5px;
+}
+
+.about,
+.interest,
+.reference {
+	display: flex;
+	margin: 0 20px;
+}
+
+.colours,
+.colours .selection {
+	visibility: hidden;
+}
+
+.cookies {
+	background-color: rgba(255, 105, 180, 0.25);
+	display: flex;
+	width: 100vw;
+}
+
+.experience {
+	display: flex;
+}
+
+.experience:not(:last-of-type) {
+	border-bottom: 1px solid aquamarine;
+}
+
+.experience header,
+.experience pre {
+	margin: 0 20px;
+}
+
+.experience header {
+	flex: 1;
+	flex-direction: column;
+}
+
+.experience pre {
+	flex: 1;
+	padding: 20px 0;
+}
+
+.hide {
+	background-color: transparent;
+	border: 0;
+}
+
+.hide::after {
+	content: "	🚀";
+}
+
+.hide::before {
+	color: transparent;
+	content: "hide";
+}
+
+.hide:hover::before,
+.hide:focus::before {
+	color: black;
+}
+
+.intro {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 10px;
+	width: 95%;
+}
+
+.intro span {
+	margin-right: 10px;
+	background-color: transparent;
+}
+
+.intro span:not([class=""]):first-of-type,
+.intro span[class=""] + span:not([class=""]) {
+	background-color: rgba(153, 205, 50, 0.25);
+}
+
+.list {
+	display: flex;
+	flex-direction: row;
+}
+
+.list ul {
+	list-style: none;
+	margin: 0 0 1rem 0;
+	text-indent: 1.5rem;
+}
+
+.list li::before {
+	color: hotpink;
+	content: "➜		";
+	font-size: 0.8rem;
+}
+
+.list li li::before {
+	content: "•		";
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@supports (--foo: green) {
+	.colours {
+		flex: 15%;
+		list-style: none;
+		margin: auto 0;
+		padding: 0;
+		visibility: visible;
+	}
+
+	.colours li:first-child {
+		font-size: 0.8rem;
+		text-decoration: underline;
+	}
+
+	.colours .selection::before {
+		content: attr(data-bg-colour);
+	}
+
+	.colours .selection {
+		background-color: transparent;
+		border: none;
+		color: var(--fg-colour);
+		outline: none;
+	}
+}
