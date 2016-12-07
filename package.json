@@ -11,32 +11,35 @@
     "autoprefixr": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' public/styles/*.css -d public/dist/",
     "babel": "babel public/src -d public/dist --source-maps",
     "build": "npm run lint; npm run babel; npm run autoprefixr",
-    "lint": "xo --fix 'public/src/**/*.js'",
+    "development": "node --harmony --inspect .",
+    "lint": "eslint --fix --ignore-pattern '**/dist' '*.js'",
     "monitor": "snyk monitor",
-    "now-build": "snyk auth $SNYK_TOKEN; npm run build; npm run monitor",
+    "now-build": "snyk auth $SNYK_TOKEN; npm run build",
     "postinstall": "snyk protect",
-    "start": "node .",
+    "start": "node --harmony .",
     "test": "snyk test"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "babel-cli": "^6.10.1",
+    "babel-eslint": "^7.1.1",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.5.0",
-    "postcss-cli": "^2.6.0",
-    "xo": "^0.17.0"
+    "bunyan": "^1.8.5",
+    "eslint": "^3.11.1",
+    "postcss-cli": "^2.6.0"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
     "dropcap.js": "^1.0.1",
-    "express": "^4.14.0",
-    "http-auth": "^3.1.0",
     "jsonwebtoken": "^7.2.0",
+    "koa": "2",
+    "koa-bodyparser": "next",
+    "koa-send": "^3.2.0",
+    "koa-static": "^3.0.0",
     "ms": "^0.7.2",
     "normalize.css": "^5.0.0",
-    "snyk": "^1.19.1",
+    "snyk": "^1.21.2",
     "whatwg-fetch": "^2.0.1"
   },
   "babel": {
@@ -47,32 +50,23 @@
     "plugins": [],
     "sourceMaps": "inline"
   },
-  "xo": {
-    "esnext": true,
-    "rules": {
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ],
-      "object-curly-spacing": [
-        1,
-        "always"
-      ],
-      "operator-assignment": [
-        1,
-        "never"
-      ]
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "serviceworker": true
     },
-    "global": [
-      "Headers",
-      "Response",
-      "caches",
-      "document",
-      "fetch",
-      "google",
-      "navigator",
-      "self",
-      "window"
-    ]
+    "globals": {
+      "google": true
+    },
+    "parser": "babel-eslint"
+  },
+  "now": {
+    "env": {
+      "SECRET": "@password",
+      "SNYK_TOKEN": "@snyk"
+    }
   }
 }

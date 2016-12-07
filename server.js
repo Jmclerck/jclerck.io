@@ -1,12 +1,20 @@
-const fs = require('fs');
 const path = require('path');
 const ms = require('ms');
-const express = require('express');
 const jwt = require('jsonwebtoken');
-const body = require('body-parser');
-const cookies = require('cookie-parser');
+const bunyan = require('bunyan');
 
-const app = express();
+const body = require('koa-bodyparser');
+const send = require('koa-send');
+const serve = require('koa-static');
+const Koa = require('koa');
+
+const app = new Koa();
+const logger = bunyan.createLogger({ name: 'server' });
+
+app.use(body());
+app.use(serve(path.join('public')));
+app.use(serve(path.join('node_modules')));
+
 const settings = {
 	cookies: {
 		httpOnly: true,
@@ -20,46 +28,45 @@ const settings = {
 	},
 };
 
-const authorised = cookie => {
+const authorised = token => {
 	let success = false;
 
-	if (cookie === undefined) {
-		success = false;
-	} else if (Object.keys(cookie).length === 0) {
-		success = false;
-	} else {
-		try {
-			jwt.verify(cookie.token, settings.secret);
+	try {
+		jwt.verify(token, settings.secret);
 
-			success = jwt.decode(cookie.token).data === process.env.SECRET;
-		} catch (err) {
-			success = false;
-		}
+		success = jwt.decode(token).data === process.env.SECRET;
+	} catch (err) {
+		logger.error(err.message);
 	}
 
 	return success;
 };
 
-app.use(cookies());
-app.use('/', express.static('public'));
-app.use('/node_modules', express.static('node_modules'));
+app.use(async (ctx, next) => {
+	if (ctx.request.path.includes('wedding')) {
+		const cookie = ctx.cookies.get('token');
 
-app.get('/wedding', (req, res) => {
-	if (authorised(req.cookies)) {
-		res.setHeader('Content-Type', 'text/html');
-		res.send(fs.readFileSync(path.join('private/the-wedding.html'), 'utf8'));
+		if (authorised(cookie)) {
+			await send(ctx, '/private/the-wedding.html');
+		} else {
+			ctx.redirect('/login.html');
+		}
 	} else {
-		res.redirect('/login.html');
+		await next();
 	}
 });
 
-app.post('/token', body.urlencoded({ extended: false }), (req, res) => {
-	const token = jwt.sign({
-		data: req.body.password,
-	}, settings.secret, settings.webtoken);
+app.use(async (ctx, next) => {
+	if (ctx.request.path.includes('/token')) {
+		const token = jwt.sign({
+			data: ctx.request.body.password,
+		}, settings.secret, settings.webtoken);
 
-	res.cookie('token', token, settings.cookies);
-	res.redirect('/wedding');
+		ctx.cookies.set('token', token, settings.cookies);
+		ctx.redirect('/wedding');
+	} else {
+		await next();
+	}
 });
 
-app.listen(settings.port, () => console.log(`Server started on port ${settings.port}`));
+app.listen(settings.port, () => logger.info(`Server started on port ${settings.port}`));

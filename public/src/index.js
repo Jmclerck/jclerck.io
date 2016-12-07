@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const body = document.body;
 
 	const caps = document.createElement('script');
-	caps.src = '../node_modules/dropcap.js/dropcap.min.js';
+	caps.src = '../dropcap.js/dropcap.min.js';
 	caps.onload = () => {
 		const dropcaps = document.querySelectorAll('.dropcap');
 		window.Dropcap.layout(dropcaps, 3);
