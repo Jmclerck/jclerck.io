@@ -1,30 +1,30 @@
-const path = require('path');
-const ms = require('ms');
-const jwt = require('jsonwebtoken');
-const bunyan = require('bunyan');
+const path = require(`path`);
+const ms = require(`ms`);
+const jwt = require(`jsonwebtoken`);
+const bunyan = require(`bunyan`);
 
-const body = require('koa-bodyparser');
-const send = require('koa-send');
-const serve = require('koa-static');
-const Koa = require('koa');
+const body = require(`koa-bodyparser`);
+const send = require(`koa-send`);
+const serve = require(`koa-static`);
+const koa = require(`koa`);
 
-const app = new Koa();
-const logger = bunyan.createLogger({ name: 'server' });
+const app = new koa();
+const logger = bunyan.createLogger({ name: `server` });
 
 app.use(body());
-app.use(serve(path.join('public')));
-app.use(serve(path.join('node_modules')));
+app.use(serve(path.join(`public`)));
+app.use(serve(path.join(`node_modules`)));
 
 const settings = {
 	cookies: {
 		httpOnly: true,
-		maxAge: ms('1m'),
-		path: '/wedding',
+		maxAge: ms(`5m`),
+		path: `/wedding`,
 	},
 	port: 3000,
-	secret: 'shhhhh',
+	secret: `shhhhh`,
 	webtoken: {
-		expiresIn: '1m',
+		expiresIn: `5m`,
 	},
 };
 
@@ -43,13 +43,13 @@ const authorised = token => {
 };
 
 app.use(async (ctx, next) => {
-	if (ctx.request.path.includes('wedding')) {
-		const cookie = ctx.cookies.get('token');
+	if (ctx.request.path.includes(`wedding`)) {
+		const cookie = ctx.cookies.get(`token`);
 
 		if (authorised(cookie)) {
-			await send(ctx, '/private/the-wedding.html');
+			await send(ctx, `/private/the-wedding.html`);
 		} else {
-			ctx.redirect('/login.html');
+			ctx.redirect(`/login.html`);
 		}
 	} else {
 		await next();
@@ -57,13 +57,13 @@ app.use(async (ctx, next) => {
 });
 
 app.use(async (ctx, next) => {
-	if (ctx.request.path.includes('/token')) {
+	if (ctx.request.path.includes(`/token`)) {
 		const token = jwt.sign({
 			data: ctx.request.body.password,
 		}, settings.secret, settings.webtoken);
 
-		ctx.cookies.set('token', token, settings.cookies);
-		ctx.redirect('/wedding');
+		ctx.cookies.set(`token`, token, settings.cookies);
+		ctx.redirect(`/wedding?lang=${ctx.request.body.language}`);
 	} else {
 		await next();
 	}

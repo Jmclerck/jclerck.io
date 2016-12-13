@@ -1,0 +1,38 @@
+{
+  "pt-pt": {
+    "date": "Sabado 13 de Mayo, 2017",
+    "edinburgh": "Edimburgo",
+    "title": "O Wedding",
+    "where": {
+      "heading": "Onde",
+      "detail": "officiis. et tenetur deleniti modi possimus inventore quod dolorem, error ipsum saepe aspernatur, asperiores, pariatur recusandae rerum illo voluptates Consequuntur asperiores. rerum suscipit, quod a itaque ut est fuga excepturi odio esse libero impedit Officiis elit. adipisicing consectetur amet, sit dolor ipsum Lorem"
+    },
+    "when": {
+      "heading": "Quando",
+      "detail": "officiis. et tenetur deleniti modi possimus inventore quod dolorem, error ipsum saepe aspernatur, asperiores, pariatur recusandae rerum illo voluptates Consequuntur asperiores. rerum suscipit, quod a itaque ut est fuga excepturi odio esse libero impedit Officiis elit. adipisicing consectetur amet, sit dolor ipsum Lorem"
+    },
+    "alt": {
+      "calendar": "Calendario",
+      "hero": "Victoria e Jonathan",
+      "tartan": " Tartan Antigon Novo McMillan"
+    }
+  },
+  "en-gb": {
+    "date": "Saturday 13th of May, 2017",
+    "edinburgh": "Edinburgh",
+    "title": "The Wedding",
+    "where": {
+      "heading": "Where",
+      "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis impedit libero esse odio excepturi fuga est ut itaque a quod suscipit, rerum asperiores. Consequuntur voluptates illo rerum recusandae pariatur asperiores, aspernatur, saepe ipsum error dolorem, quod inventore possimus modi deleniti tenetur et officiis."
+    },
+    "when": {
+      "heading" : "When",
+      "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis impedit libero esse odio excepturi fuga est ut itaque a quod suscipit, rerum asperiores. Consequuntur voluptates illo rerum recusandae pariatur asperiores, aspernatur, saepe ipsum error dolorem, quod inventore possimus modi deleniti tenetur et officiis."
+    },
+    "alt": {
+      "calendar": "Calendar dated 13th May 2017",
+      "hero": "Jonathan Victoria",
+      "tartan": "McMillan Old Modern Tartan"
+    }
+  }
+}

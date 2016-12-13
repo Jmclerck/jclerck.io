@@ -1,18 +1,27 @@
+@-ms-viewport {
+	width: device-width;
+}
+
 @media(min-width: 320px) {
 	form {
-		background-color: ghostwhite;
 		height: 100%;
-		padding: 11% 0;
 		width: 100%;
+	}
+
+	header {
+		flex: 1;
 	}
 }
 
-@media(min-width: 425px) {
+@media(min-width: 675px) {
 	form {
-		background-color: ghostwhite;
 		height: 50%;
 		margin: 25%;
 		width: 50%;
+	}
+
+	header {
+		flex: 3;
 	}
 }
 
@@ -31,10 +40,43 @@ body {
 
 fieldset {
 	border: none;
-	margin: 0 11% 11% 11%;
 }
 
 fieldset input {
+	text-align: center;
+	width: 70%;
+}
+
+fieldset label {
+	display: inline-block;
+	width: 25%;
+}
+
+form {
+	background-color: ghostwhite;
+	display: flex;
+	flex-direction: column;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+header {
+	background-image: url(../images/background.png);
+	background-position: 0;
+	background-size: 100% 150%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+img {
+	height: 150%;
+	position: relative;
+	top: -50%;
 	width: 100%;
 }
 
@@ -42,6 +84,17 @@ input[type="submit"] {
 	background: white;
 	border: none;
 	font-family: inherit;
-	margin: 0 33% 11% 33%;
+	margin: 0 33%;
 	width: 33%;
+}
+
+select {
+	margin: 0 20%;
+}
+
+.container {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
 }

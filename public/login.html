@@ -11,17 +11,28 @@
 		<link rel="stylesheet" href="styles/login.css">
 	</head>
 	<body>
-		<form action="/token" method="POST">
-			<fieldset>
-				<label for="username">username</label>
-				<input id="username" name="username" type="text">
-			</fieldset>
+		<form id="login" action="/token" method="POST">
+			<header>
+				<h1>Jonathan &amp; Victoria Clerck</h1>
+			</header>
 
-			<fieldset>
-				<label for="password">password</label>
-				<input id="password" name="password" type="password">
-			</fieldset>
-			<input type="submit" value="Login">
+			<div class="container">
+				<fieldset>
+					<label for="password">password</label>
+					<input id="password" name="password" type="password">
+				</fieldset>
+			</div>
+
+			<div class="container">
+				<input type="submit" value="Login">
+			</div>
+
+			<div class="container">
+				<select name="language" form="login">
+					<option value="en-gb">English</option>
+					<option value="pt-pt">Portugués</option>
+				</select>
+			</div>
 		</form>
 	</body>
 </html>

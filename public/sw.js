@@ -1,13 +1,15 @@
-'use strict';
+`use strict`;
 
-const cacheVersion = '1.2.3';
-const cacheName = `${self.location.host}-${cacheVersion}`;
+const cacheVersion = `1.2.5`;
+const cacheName = `${self.location.host}-${cacheVersion}`
 const cacheContents = [
-	'/',
-	'index.html',
-	'images/404.png',
-	'scripts/app.js',
-	'styles/default.css',
+	`/`,
+	`index.html`,
+	`login.html`,
+	`downloads/`,
+	`dist/`,
+	`images/`,
+	`styles/`,
 ];
 
 self.onactivate = event => {
@@ -36,11 +38,11 @@ self.oninstall = event => {
 
 self.onfetch = event => {
 	const offlineResponse = () => {
-		const isImage = event.request.headers.get('Accept').includes('image');
+		const isImage = event.request.headers.get(`Accept`).includes(`image`);
 
-		return isImage ? caches.match('images/404.png') : new Response('<h1>Offline</h1', {
+		return isImage ? caches.match(`images/404.png`) : new Response(`<h1>Offline</h1>`, {
 			headers: {
-				'Content-Type': 'text/html',
+				'Content-Type': `text/html`,
 			},
 		});
 	};
@@ -60,7 +62,7 @@ self.onfetch = event => {
 };
 
 self.onpush = event => {
-	if (!self.Notification || self.Notification.permission !== 'granted') {
+	if (!self.Notification || self.Notification.permission !== `granted`) {
 		return;
 	}
 
@@ -70,9 +72,9 @@ self.onpush = event => {
 		data = event.data.json();
 	}
 
-	const title = data.title || 'notification';
-	const body = data.message || 'notification';
-	const icon = 'images/notification.png';
+	const title = data.title || `notification`;
+	const body = data.message || `notification`;
+	const icon = `images/icons/notification.png`;
 
 	self.registration.showNotification(title, {
 		body,
