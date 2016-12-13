@@ -1,3 +1,7 @@
+@-ms-viewport {
+	width: device-width;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -180,10 +184,6 @@ section {
 
 .list li li::before {
 	content: "•		";
-}
-
-@-ms-viewport {
-	width: device-width;
 }
 
 @supports (--foo: green) {
