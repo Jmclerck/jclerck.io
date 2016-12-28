@@ -33,28 +33,9 @@ const searchParams = () => {
 	}, {});
 }
 
-const dropcaps = () => {
-	document.querySelectorAll(`.dropcaps`).forEach(elem => {
-		const [first, rest] = [elem.innerText.substring(0, 1), elem.innerText.substring(1)];
-
-		const span = document.createElement(`span`);
-		span.classList.add(`dropcap`);
-		span.innerText = first;
-
-		elem.innerHTML = `${span.outerHTML}${rest}`;
-	});
-
-	const caps = document.createElement(`script`);
-	caps.src = `../dropcap.js/dropcap.min.js`;
-	caps.onload = () => {
-		const dropcaps = document.querySelectorAll(`.dropcap`);
-		window.Dropcap.layout(dropcaps, 3);
-	};
-	document.body.appendChild(caps);
-};
-
 const maps = () => {
 	const maps = document.createElement(`script`);
+	maps.setAttribute('defer', '');
 	maps.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAIzu8NUUUfOxBSWUfjrvlWUkmHO9YUfKo`;
 	maps.onload = () => {
 		const elem = document.querySelector(`.map`);
@@ -92,7 +73,19 @@ const translations = () => {
 				if (path) {
 					const text = path.split(`/`).reduce((prev, part) => prev[part], labels);
 
-					if (elem.tagName === `IMG`) {
+					if (elem.tagName === 'UL') {
+						text.forEach(item => {
+							const link = document.createElement('a');
+							link.href = item.link;
+							link.target = '_blank';
+							link.innerText = item.name;
+
+							const listItem = document.createElement('li');
+							listItem.appendChild(link);
+
+							elem.appendChild(listItem)
+						});
+					} else if (elem.tagName === `IMG`) {
 						elem.setAttribute(`alt`, text);
 					} else {
 						elem.innerText = text;
@@ -104,5 +97,5 @@ const translations = () => {
 
 document.addEventListener(`DOMContentLoaded`, () => {
 	maps();
-	translations().then(dropcaps);
+	translations();
 });

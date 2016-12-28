@@ -1,37 +1,71 @@
 {
   "pt-pt": {
-    "date": "Sabado 13 de Mayo, 2017",
+    "date": "Sabado 13 de Mayo, 2017 às 14 horas",
     "edinburgh": "Edimburgo",
-    "title": "O Wedding",
-    "where": {
-      "heading": "Onde",
-      "detail": "officiis. et tenetur deleniti modi possimus inventore quod dolorem, error ipsum saepe aspernatur, asperiores, pariatur recusandae rerum illo voluptates Consequuntur asperiores. rerum suscipit, quod a itaque ut est fuga excepturi odio esse libero impedit Officiis elit. adipisicing consectetur amet, sit dolor ipsum Lorem"
+    "title": "A cerimónia",
+    "details": {
+      "heading": "Onde e Quando",
+      "main": "A cerimónia e a recepção serão no Hub. A cerimónia começa às duas horas da tarde. O local estara disponivel à partir da uma."
     },
-    "when": {
-      "heading": "Quando",
-      "detail": "officiis. et tenetur deleniti modi possimus inventore quod dolorem, error ipsum saepe aspernatur, asperiores, pariatur recusandae rerum illo voluptates Consequuntur asperiores. rerum suscipit, quod a itaque ut est fuga excepturi odio esse libero impedit Officiis elit. adipisicing consectetur amet, sit dolor ipsum Lorem"
+    "gifts": {
+      "heading": "Presentes",
+      "main": "Estamos a organizar uma lista de presentes. :-)"
+    },
+    "hotel": {
+      "heading": "Hoteis",
+      "main": "O Hub encontra-se no centro de Edimburgo, na Royal Mile. Existe muitos hoteis na zona. Os nossos preferidos são:",
+      "list": [{
+        "name": "O G&V (onde nós vamos ficar)",
+        "link": "http://www.quorvuscollection.com/gandv-hotel-edinburgh"
+      }, {
+        "name": "O Apex Grassmarket",
+        "link": "https://www.apexhotels.co.uk/apex-grassmarket-hotel"
+      },{
+        "name": "O Holiday Inn Express Royal Mile",
+        "link": "https://www.ihg.com/holidayinnexpress/hotels/gb/en/edinburgh/edbrm/hoteldetail"
+      }, {
+        "name": "Os Fraser Suites (apart-hotel)",
+        "link": "http://edinburgh.frasershospitality.com/en"
+      }]
     },
     "alt": {
       "calendar": "Calendario",
       "hero": "Victoria e Jonathan",
-      "tartan": " Tartan Antigon Novo McMillan"
+      "tartan": " Tartan Moderno Antigo McMillan"
     }
   },
   "en-gb": {
-    "date": "Saturday 13th of May, 2017",
+    "date": "Saturday 13th of May, 2017 at 2pm",
     "edinburgh": "Edinburgh",
-    "title": "The Wedding",
-    "where": {
-      "heading": "Where",
-      "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis impedit libero esse odio excepturi fuga est ut itaque a quod suscipit, rerum asperiores. Consequuntur voluptates illo rerum recusandae pariatur asperiores, aspernatur, saepe ipsum error dolorem, quod inventore possimus modi deleniti tenetur et officiis."
+    "title": "The Ceremony",
+    "details": {
+      "heading": "Where and When",
+      "main": "Both the ceremony and reception will be held at the Hub. The ceremony starts at 2 o'clock. Doors will be open from 1 o'clock."
     },
-    "when": {
-      "heading" : "When",
-      "detail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis impedit libero esse odio excepturi fuga est ut itaque a quod suscipit, rerum asperiores. Consequuntur voluptates illo rerum recusandae pariatur asperiores, aspernatur, saepe ipsum error dolorem, quod inventore possimus modi deleniti tenetur et officiis."
+    "gifts": {
+      "heading" : "Wedding Gifts",
+      "main": "We are working on getting a wedding list sorted. :-)"
+    },
+    "hotels": {
+      "heading": "Accomodation",
+      "main": "The Hub is in the centre of Edinburgh, on the Royal Mile. There are many hotels nearby. Our favourites are:",
+      "list": [{
+        "name": "The G&V (where we are staying)",
+        "link": "http://www.quorvuscollection.com/gandv-hotel-edinburgh"
+      }, {
+        "name": "The Apex Grassmarket",
+        "link": "https://www.apexhotels.co.uk/apex-grassmarket-hotel"
+      }, {
+        "name": "The Holiday Inn Express Royal Mile",
+        "link": "https://www.ihg.com/holidayinnexpress/hotels/gb/en/edinburgh/edbrm/hoteldetail"
+      }, {
+        "name": "The Fraser Suites (self-catered apartments)",
+        "link": "http://edinburgh.frasershospitality.com/en"
+      }]
     },
     "alt": {
       "calendar": "Calendar dated 13th May 2017",
-      "hero": "Jonathan Victoria",
+      "hero": "Jonathan and Victoria",
       "tartan": "McMillan Old Modern Tartan"
     }
   }

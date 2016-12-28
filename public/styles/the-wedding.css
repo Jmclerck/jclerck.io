@@ -24,7 +24,6 @@
 		display: none;
 	}
 
-	.calendar,
 	.map {
 		height: 200px;
 		margin: 5% auto;
@@ -35,6 +34,7 @@
 	section > header {
 		display: flex;
 		flex-direction: column;
+		float: left;
 		height: 300px;
 		shape-outside: circle(50%);
 		width: 300px;
@@ -103,11 +103,11 @@
 		width: 85%;
 	}
 
-	.where header {
+	.segment:nth-child(even) {
 		float: left;
 	}
 
-	.when header {
+	.segment:nth-child(odd) {
 		float: right;
 	}
 }
@@ -135,8 +135,11 @@ h1, h2 {
 	flex-direction: column;
 }
 
-.when,
-.where {
+.dropcaps {
+	white-space: pre-wrap;
+}
+
+.segment {
 	overflow: hidden;
 	padding: 10px;
 }
