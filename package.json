@@ -43,7 +43,7 @@
     "koa-static": "next",
     "ms": "^0.7.2",
     "normalize.css": "^5.0.0",
-    "snyk": "^1.21.2",
+    "snyk": "^1.22.1",
     "whatwg-fetch": "^2.0.1"
   },
   "babel": {
