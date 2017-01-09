@@ -30,7 +30,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "bunyan": "^1.8.5",
     "concurrently": "^3.1.0",
-    "eslint": "^3.12.2",
+    "eslint": "^3.13.1",
     "nodemon": "^1.11.0",
     "postcss-cli": "^2.6.0"
   },
