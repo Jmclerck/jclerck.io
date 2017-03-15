@@ -1,19 +1,23 @@
 {
   "pt-pt": {
-    "date": "Sabado 13 de Mayo, 2017 às 14 horas",
+    "date": "sábado 13 de Maio, 2017 às 14 horas",
     "edinburgh": "Edimburgo",
     "title": "A cerimónia",
     "details": {
       "heading": "Onde e Quando",
-      "main": "A cerimónia e a recepção serão no Hub. A cerimónia começa às duas horas da tarde. O local estara disponivel à partir da uma."
+      "main": "A cerimónia e a recepção serão no Hub. A cerimónia começa às duas horas da tarde. O local estará disponivel a partir da uma.\n\nTemos o Hub a tarde toda, até à meia-noite. Haverá bebidas e petiscos entre a cerimónia e o jantar."
+    },
+    "food": {
+      "heading": "Festim Fino",
+      "main": "Precisamos de saber que tipo de comida querem para a entrada e o prato principal. As opções são carne, peixe ou vegetariano. O menu exacto será surpresa, para vos manter em suspenso até ao fim.\n\nTambém precisamos de saber a preferência para sobremesa. As escolhas são pannacotta, cheesecake ou uma indulgência de chocolate.\n\nConseguem adivinhar quais nós vamos comer? Dica: a Victoria de certeza não vai escolher o chocolate..."
     },
     "gifts": {
       "heading": "Presentes",
-      "main": "Estamos a organizar uma lista de presentes. :-)"
+      "main": "Já vivemos juntos há muito tempo e temos muitas coisas. Gostaríamos muito ter alguns copos de cristal e cadeiras de jantar. Como sabemos os quais queremos, apreciamos contribuições. Se quiserem comprar um presente, falam com o Edwin Clerck (o pai do Jon, que só fala inglês, <a href='mailto:edwin.clerck@icloud.com?subject=Wedding%20Gifts'>edwin.clerck@icloud.com</a>). Ele vos dirá quais comprar. Se quiserem mandar algo por transferencia bancaria, por favor contacte-nos."
     },
-    "hotel": {
+    "hotels": {
       "heading": "Hoteis",
-      "main": "O Hub encontra-se no centro de Edimburgo, na Royal Mile. Existe muitos hoteis na zona. Os nossos preferidos são:",
+      "main": "O Hub encontra-se no centro de Edimburgo, na Royal Mile. Existem muitos hoteis na zona. Os nossos preferidos são:",
       "list": [{
         "name": "O G&V (onde nós vamos ficar)",
         "link": "http://www.quorvuscollection.com/gandv-hotel-edinburgh"
@@ -28,6 +32,10 @@
         "link": "http://edinburgh.frasershospitality.com/en"
       }]
     },
+    "photos": {
+      "heading": "Fotografias",
+      "main": "Gostaríamos de ver algumas das fotografias que tirarem no dia do casamento. Poderão carregá-las neste site, para as partilhar connosco e com outros."
+    },
     "alt": {
       "calendar": "Calendario",
       "hero": "Victoria e Jonathan",
@@ -40,11 +48,15 @@
     "title": "The Ceremony",
     "details": {
       "heading": "Where and When",
-      "main": "Both the ceremony and reception will be held at the Hub. The ceremony starts at 2 o'clock. Doors will be open from 1 o'clock."
+      "main": "Both the ceremony and reception will be held at the Hub. The ceremony starts at 2 o'clock. Doors will be open from 1 o'clock.\n\nWe have the Hub for the whole afternoon and evening, until midnight. There will be drinks and nibbles between the ceremony and the wedding breakfast."
+    },
+    "food": {
+      "heading": "Fancy Feast",
+      "main": "Let us know what kind of food you would prefer for your starters and mains. The  options are meat, fish or vegetarian. We're keeping the exact menu a surprise, so that you  have something to look forward to on the day.\n\nAlso let us know your preference for dessert. Choices are pannacotta, cheesecake or a chocolate indulgence.\n\nCan you guess which one we're going for? Hint: Victoria definitely won't be choosing the chocolate..."
     },
     "gifts": {
       "heading" : "Wedding Gifts",
-      "main": "We are working on getting a wedding list sorted. :-)"
+      "main": "As we've lived together a long time we already have a lot of things. We would love to add to those things with some crystal glasses and some dining chairs. As we know what we want, we would appreciate contributions to these. Should you want to buy a gift, please get in touch with Edwin Clerck (Jon's dad, <a href='mailto:edwin.clerck@icloud.com?subject=Wedding%20Gifts'>edwin.clerck@icloud.com</a>), who will let you know which ones to get. If you would like to send us something by bank transfer, please get in touch with us."
     },
     "hotels": {
       "heading": "Accomodation",
@@ -62,6 +74,10 @@
         "name": "The Fraser Suites (self-catered apartments)",
         "link": "http://edinburgh.frasershospitality.com/en"
       }]
+    },
+    "photos": {
+      "heading": "Photographs",
+      "main": "We would love to see some of the photos that you take on our wedding day. You will be able to upload them to this website, so that you can share them with us and everyone else."
     },
     "alt": {
       "calendar": "Calendar dated 13th May 2017",

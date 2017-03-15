@@ -135,10 +135,6 @@ h1, h2 {
 	flex-direction: column;
 }
 
-.dropcaps {
-	white-space: pre-wrap;
-}
-
 .segment {
 	overflow: hidden;
 	padding: 10px;
