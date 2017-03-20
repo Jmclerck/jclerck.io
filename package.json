@@ -42,7 +42,7 @@
     "koa-bodyparser": "4",
     "koa-send": "^3.3.0",
     "koa-static": "^3.0.0",
-    "ms": "^0.7.3",
+    "ms": "^1.0.0",
     "normalize.css": "^5.0.0",
     "snyk": "^1.25.2",
     "whatwg-fetch": "^2.0.3"
