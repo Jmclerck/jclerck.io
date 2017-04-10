@@ -40,7 +40,7 @@
     "jsonwebtoken": "^7.3.0",
     "koa": "2.2.0",
     "koa-bodyparser": "4",
-    "koa-send": "^3.3.0",
+    "koa-send": "^4.0.0",
     "koa-static": "^3.0.0",
     "ms": "^1.0.0",
     "normalize.css": "^6.0.0",
