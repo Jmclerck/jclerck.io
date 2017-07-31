@@ -1,82 +1,24 @@
 {
   "name": "jclerck.io",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "author": "Jon Clerck <jmclerck@icloud.com>",
   "description": "",
   "keywords": [],
   "license": "MIT",
-  "main": "server.js",
   "repository": "https://github.com/Jmclerck/jclerck.io",
   "scripts": {
-    "autoprefixr": "postcss --use autoprefixer public/styles/*.css -d public/dist/",
-    "babel": "babel public/src -d public/dist --source-maps",
-    "build": "npm run lint; npm run babel; npm run autoprefixr; npm run monitor",
-    "concurrent": "concurrently --prefix '[ {name} ]' --names 'serve,watch' --prefix-colors 'red,green' 'npm run development' 'npm run watch'",
-    "development": "denode .",
-    "lint": "eslint --fix --ignore-pattern '**/dist' '*.js'",
-    "monitor": "snyk monitor",
-    "now-build": "snyk auth $SNYK_TOKEN; npm run build",
-    "postinstall": "snyk protect",
-    "start": "node .",
-    "test": "snyk test",
-    "watch": "nodemon --watch public --watch private --ignore dist --exec npm run build"
+    "lint": "eslint --fix 'src/**/*.js'"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
-    "babel-cli": "^6.22.2",
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.1.8",
-    "bunyan": "^1.8.8",
-    "concurrently": "^3.4.0",
-    "eslint": "^3.16.1",
-    "nodemon": "^1.11.0",
-    "postcss-cli": "^2.6.0"
+    "eslint": "^4.3.0"
   },
-  "dependencies": {
-    "babel-polyfill": "^6.23.0",
-    "babel-runtime": "^6.23.0",
-    "jsonwebtoken": "^7.3.0",
-    "koa": "2.2.0",
-    "koa-bodyparser": "4",
-    "koa-send": "^3.3.0",
-    "koa-static": "^3.0.0",
-    "ms": "^0.7.3",
-    "normalize.css": "^5.0.0",
-    "snyk": "^1.25.2",
-    "whatwg-fetch": "^2.0.3"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ],
-    "sourceMaps": "inline"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
       "browser": true,
       "es6": true,
-      "node": true,
       "serviceworker": true
     },
-    "globals": {
-      "google": true
-    },
     "parser": "babel-eslint"
-  },
-  "now": {
-    "env": {
-      "SECRET": "@password",
-      "SNYK_TOKEN": "@snyk"
-    }
   }
 }
