@@ -26,7 +26,7 @@ const translations = async () => {
   const elements = Array.from(document.querySelectorAll(`[${attr}]`));
 
   try {
-    const res = await fetch(`translations/${lang}.json`);
+    const res = await fetch(`../translations/${lang}.json`);
     const labels = await res.json();
 
     elements.forEach(elem => {
