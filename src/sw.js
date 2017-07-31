@@ -5,13 +5,12 @@ const cacheName = `${self.location.host}-${cacheVersion}`;
 const cacheContents = [
   `/`,
   `index.html`,
-  `login.html`,
-  `translations.json`,
+  `static/cv.html`,
+  `static/wedding.html`,
+  `translations/`,
   `downloads/`,
-  `dist/`,
   `images/`,
   `styles/`,
-  `private/the-wedding.html`,
 ];
 
 self.onactivate = event => {
@@ -19,9 +18,7 @@ self.onactivate = event => {
     caches
       .keys()
       .then(cacheNames => {
-        const cacheDeletions = cacheNames
-          .filter(cache => cache !== cacheName)
-          .map(cache => caches.delete(cache));
+        const cacheDeletions = cacheNames.filter(cache => cache !== cacheName).map(cache => caches.delete(cache));
 
         return Promise.all(cacheDeletions);
       })
@@ -33,10 +30,7 @@ self.onactivate = event => {
 
 self.oninstall = event => {
   const cache = () => {
-    caches
-      .open(cacheName)
-      .then(cache => cache.addAll(cacheContents))
-      .then(() => self.skipWaiting());
+    caches.open(cacheName).then(cache => cache.addAll(cacheContents)).then(() => self.skipWaiting());
   };
 
   event.waitUntil(cache);
@@ -60,7 +54,7 @@ self.onfetch = event => {
   const respondFromNetwork = () => fetch(event.request).then(cacheResponse);
 
   const respondFromCache = () =>
-    caches.match(event.request).then(response => response ? response : offlineResponse());
+    caches.match(event.request).then(response => (response ? response : offlineResponse()));
 
   event.respondWith(respondFromNetwork(event).catch(respondFromCache));
 };
