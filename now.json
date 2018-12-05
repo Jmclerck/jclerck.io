@@ -1,0 +1,4 @@
+{
+  "alias": ["jclerck.io"],
+  "builds": [{ "src": "*.html", "use": "@now/static" }]
+}
