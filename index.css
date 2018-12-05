@@ -1,0 +1,426 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --detail-summary-font-size: 1rem;
+  --detail-summary-icon-size: 1.5rem;
+  --highlight-colour: rgb(190, 100, 255);
+
+  font-display: swap;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  background-color: #fafafa;
+  color: #050505;
+}
+
+li,
+p {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-display: swap;
+  font-family: 'Forza SSm A', 'Forza SSm B', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+  color: var(--highlight-colour);
+  font-weight: 700;
+  text-align: center;
+}
+
+h2 {
+  color: var(--highlight-colour);
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+/* Safari doesn't redraw on attribute changes, therefore we need a class toggle too */
+.expanded .detail {
+  height: 100%;
+}
+
+.accreditations {
+  border-bottom: 1px solid var(--highlight-colour);
+}
+
+.description svg {
+  height: 128px;
+  float: right;
+  margin: auto;
+  padding: 0 5%;
+}
+
+detail-summary:nth-child(odd) .description svg {
+  float: left;
+}
+
+.education {
+  border-bottom: 1px solid var(--highlight-colour);
+}
+
+.header {
+  overflow: auto;
+}
+
+.header .dates,
+.header .company,
+.header .role {
+  width: 100%;
+}
+
+.personal {
+  border-bottom: 1px solid var(--highlight-colour);
+  overflow: auto;
+  padding: 1rem;
+}
+
+.personal span {
+  float: left;
+  width: 50%;
+}
+
+.personal :not(a):nth-child(odd) {
+  text-align: center;
+}
+
+.skills {
+  border-bottom: 1px solid var(--highlight-colour);
+  overflow: auto;
+}
+
+.skills .languages,
+.skills .technologies,
+.skills .tools {
+  width: 100%;
+}
+
+.skills li {
+  list-style: none;
+}
+
+.skills li::before {
+  color: var(--highlight-colour);
+  content: '➜';
+  font-size: 0.8rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+@media screen and (min-width: 800px) {
+  .header .dates,
+  .header .company {
+    float: left;
+    width: 50%;
+  }
+
+  .header .role {
+    width: 100%;
+  }
+
+  .skills .languages,
+  .skills .technologies,
+  .skills .tools {
+    float: left;
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header .dates,
+  .header .company,
+  .header .role {
+    float: left;
+    width: 33%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  a:visited {
+    color: var(--highlight-colour);
+  }
+
+  body {
+    background-color: #303030;
+    color: #fafafa;
+  }
+
+  svg {
+    border-radius: 20%/50%;
+    background-color: #fafafa;
+  }
+}
+
+@supports (display: flex) {
+  .description {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  detail-summary:nth-child(even) .description {
+    flex-direction: row-reverse;
+  }
+
+  .description svg {
+    flex: 1;
+  }
+
+  .description p {
+    flex: 4;
+  }
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .personal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .personal span {
+    flex: 50%;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills .languages {
+    flex: 1;
+    width: auto;
+  }
+
+  .skills .technologies {
+    flex: 1;
+    width: auto;
+  }
+
+  .skills .tools {
+    flex: 1;
+    width: auto;
+  }
+
+  @media screen and (min-width: 800px) {
+    .header .company {
+      text-align: right;
+    }
+
+    .header .role {
+      flex: 100%;
+    }
+
+    .header .company,
+    .header .dates {
+      flex: auto;
+      width: max-content;
+    }
+
+    .skills {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .header .company {
+      text-align: initial;
+    }
+
+    .header .company,
+    .header .dates {
+      flex: 1;
+    }
+
+    .header .role {
+      flex: 1;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .description {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .description p {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .description ul {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .description svg {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .personal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .skills .languages {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .skills .technologies {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .skills .tools {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  @media screen and (min-width: 800px) {
+    .description {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .description p {
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+
+    .description svg {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .description ul {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    detail-summary:nth-child(even) .description p {
+      grid-column: 2/4;
+      grid-row: 1;
+    }
+
+    detail-summary:nth-child(even) .description svg {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    detail-summary:nth-child(even) .description ul {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .personal {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .personal span {
+      width: 100%;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .skills .languages {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .skills .technologies {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .skills .tools {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .description {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .description p {
+      grid-column: 1/5;
+      grid-row: 1;
+    }
+
+    .description svg {
+      grid-column: 6;
+      grid-row: 1;
+    }
+
+    .description ul {
+      grid-column: 1/5;
+      grid-row: 1;
+    }
+
+    detail-summary:nth-child(even) .description p {
+      grid-column: 2/6;
+      grid-row: 1;
+    }
+
+    detail-summary:nth-child(even) .description svg {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    detail-summary:nth-child(even) .description ul {
+      grid-column: 2/6;
+      grid-row: 2;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills .languages {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .skills .technologies {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .skills .tools {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+}
