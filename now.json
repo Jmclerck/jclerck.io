@@ -4,7 +4,7 @@
   "alias": ["jclerck.io"],
   "builds": [
     { "src": "**/*.css", "use": "@now/html-minifier" },
-    { "src": "**/*.js", "use": "@now/static" },
-    { "src": "**/*.html", "use": "@now/html-minifier" }
+    { "src": "**/*.html", "use": "@now/html-minifier" },
+    { "src": "**/*.js", "use": "@now/static" }
   ]
 }
