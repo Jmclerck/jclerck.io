@@ -1,8 +1,10 @@
 {
+  "version": 2,
+
   "alias": ["jclerck.io"],
   "builds": [
-    { "src": "**/*.css", "use": "@now/static" },
+    { "src": "**/*.css", "use": "@now/html-minifier" },
     { "src": "**/*.js", "use": "@now/static" },
-    { "src": "**/*.html", "use": "@now/static" }
+    { "src": "**/*.html", "use": "@now/html-minifier" }
   ]
 }
