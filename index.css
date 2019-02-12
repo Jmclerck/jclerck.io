@@ -56,6 +56,8 @@ h3 {
 /* Safari doesn't redraw on attribute changes, therefore we need a class toggle too */
 .expanded .detail {
   height: 100%;
+template {
+  display: none;
 }
 
 .accreditations {
