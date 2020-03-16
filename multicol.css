@@ -33,7 +33,7 @@ header {
 
 .experience > div:not(:first-of-type) {
   border-block-start: 1px solid var(--colour-highlight-primary);
-  border-left: 1px solid var(--colour-highlight-primary);
+  border-top: 1px solid var(--colour-highlight-primary);
   padding-block-start: 1rem;
   padding-top: 1rem;
 }
