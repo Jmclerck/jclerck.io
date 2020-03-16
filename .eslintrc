@@ -1,8 +1,0 @@
-{
-  "extends": "airbnb-base",
-  "globals": {
-    "customElements": true,
-    "document": true,
-    "HTMLElement": true
-  }
-}

@@ -1,0 +1,123 @@
+header {
+  columns: 1;
+}
+
+.company,
+.role {
+  padding-block-end: 0.5rem;
+  border-bottom: 0.5rem;
+}
+
+.company h3 {
+  display: inline-block;
+}
+
+.experience li {
+  padding-block-end: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.experience span {
+  display: none;
+}
+
+.experience ul {
+  columns: 5;
+}
+
+.experience > div {
+  margin-block-end: 1rem;
+  margin-bottom: 1rem;
+}
+
+.experience > div:not(:first-of-type) {
+  border-block-start: 1px solid var(--colour-highlight-primary);
+  border-left: 1px solid var(--colour-highlight-primary);
+  padding-block-start: 1rem;
+  padding-top: 1rem;
+}
+
+.personal {
+  columns: 1;
+  padding: 1rem;
+}
+
+.personal span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.personal span:nth-child(even) {
+  padding-block-end: 0.5rem;
+  border-bottom: 0.5rem;
+}
+
+.skills {
+  columns: 1;
+}
+
+.skills .languages,
+.skills .technologies,
+.skills .tools {
+  break-inside: avoid;
+  padding-block-end: 1rem;
+  border-bottom: 1rem;
+}
+
+@media screen and (min-width: 525px) {
+  header {
+    columns: 2;
+  }
+
+  .experience span {
+    display: inline-block;
+    margin-inline-end: 1rem;
+    margin-right: 1rem;
+  }
+
+  .experience li {
+    text-align: start;
+    text-align: left;
+  }
+
+  .experience ul {
+    columns: 3;
+  }
+
+  .personal {
+    columns: 2;
+  }
+
+  .skills {
+    columns: 2;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  header {
+    columns: 3;
+  }
+
+  .skills {
+    columns: 3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .experience li {
+    padding-block-end: unset;
+    padding-bottom: unset;
+    text-align: center;
+  }
+
+  .experience li:not(:first-of-type) {
+    border-inline-start: 1px solid var(--colour-highlight-primary);
+    border-left: 1px solid var(--colour-highlight-primary);
+  }
+
+  .experience ul {
+    columns: 5;
+  }
+}
