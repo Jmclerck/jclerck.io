@@ -1,0 +1,9 @@
+snapshot:
+  widths:
+    - 256
+    - 512
+    - 1024
+    - 2000
+static-snapshots:
+  ignore-files: "**/template.html"
+version: 1
