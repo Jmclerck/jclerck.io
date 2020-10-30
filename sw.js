@@ -1,4 +1,4 @@
-const CACHE_NAME = "jclerck-v2";
+const CACHE_NAME = "jclerck-v1";
 
 const urlsToCache = ["/", "index.html", "primary.css"];
 
