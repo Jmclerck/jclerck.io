@@ -57,7 +57,14 @@ body {
   color: var(--colour-secondary);
 }
 
-h1,
+body > header {
+  background-color: var(--colour-highlight-primary);
+}
+
+h1 {
+  color: var(--colour-primary);
+}
+
 h2,
 h3 {
   color: var(--colour-highlight-primary);
