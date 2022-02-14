@@ -47,7 +47,7 @@ main {
 section > ul {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
   justify-items: center;
   padding: unset;
 }
@@ -71,20 +71,13 @@ section > header > h4 {
 
 section > svg {
   height: 5rem;
-  margin: auto;
+  margin: 2.5rem auto;
   width: auto;
 }
 
 @media screen and (min-width: 567px) {
   section {
     scroll-snap-align: start;
-  }
-
-  section > ul {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-items: center;
   }
 
   section > header {
