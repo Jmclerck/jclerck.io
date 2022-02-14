@@ -1,0 +1,91 @@
+:root {
+  --colour-highlight-primary: #6b00b7;
+  --colour-highlight-secondary: #f02200;
+  --colour-primary: #fafafa;
+  --colour-secondary: #454545;
+
+  --timing-fast: 0.125s;
+  --timing-slow: 1s;
+
+  font-family: -system-ui, sans-serif;
+  font-size: 1.25em;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --colour-highlight-primary: #be64ff;
+    --colour-highlight-secondary: #00ffff;
+    --colour-primary: #303030;
+    --colour-secondary: #fafafa;
+  }
+}
+
+@media screen and (color: color(display-p3 1 1 1)) {
+  :root {
+    --colour-highlight-primary: color(display-p3 0.3825 0 0.6898);
+    --colour-highlight-secondary: color(display-p3 1 0.2332 0.1336);
+    --colour-primary: color(display-p3 0.98 0.98 0.98);
+    --colour-secondary: color(display-p3 0.16 0.16 0.16);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --colour-highlight-primary: color(display-p3 0.75 0.35 1);
+      --colour-highlight-secondary: color(display-p3 0 0.985 1);
+      --colour-primary: color(display-p3 0.1882 0.1882 0.1882);
+      --colour-secondary: color(display-p3 0.98 0.98 0.98);
+    }
+  }
+}
+
+:any-link {
+  color: var(--colour-highlight-primary);
+}
+
+:any-link:visited {
+  color: var(--colour-highlight-secondary);
+}
+
+::selection {
+  background-color: var(--colour-highlight-primary);
+  color: var(--colour-primary);
+}
+
+body {
+  background-color: var(--colour-primary);
+  caret-color: var(--colour-highlight-primary);
+  color: var(--colour-secondary);
+}
+
+:is(body) > header {
+  border-block-end: 1px solid var(--colour-highlight-primary);
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--colour-highlight-primary);
+}
+
+footer > a > :is(address, span) {
+  display: none;
+}
+
+section > ul {
+  list-style: none;
+}
+
+section > ul > a {
+  text-decoration: none;
+}
+
+section > svg {
+  color: var(--colour-highlight-primary);
+}
+
+@media screen and (min-width: 567px) {
+  footer > a > :is(address, span) {
+    display: block;
+  }
+}

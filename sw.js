@@ -1,16 +1,16 @@
 const CACHE_NAME = "jclerck-v1";
 
-const urlsToCache = ["/", "index.html", "primary.css"];
+const urlsToCache = ["/", "./styles"];
 
-self.addEventListener("install", function(event) {
+self.addEventListener("install", function (event) {
   self.skipWaiting();
 
   event.waitUntil(
     caches
       .keys()
-      .then(keys =>
+      .then((keys) =>
         Promise.all(
-          keys.map(key => {
+          keys.map((key) => {
             if (!CACHE_NAME.includes(key)) {
               return caches.delete(key);
             }
@@ -18,28 +18,28 @@ self.addEventListener("install", function(event) {
         )
       )
       .then(() =>
-        caches.open(CACHE_NAME).then(cache => {
+        caches.open(CACHE_NAME).then((cache) => {
           return cache.addAll(urlsToCache);
         })
       )
   );
 });
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request).then((response) => {
       if (response) {
         return response;
       }
 
-      return fetch(event.request).then(response => {
+      return fetch(event.request).then((response) => {
         if (!response || !response.ok) {
           return response;
         }
 
         const responseToCache = response.clone();
 
-        caches.open(CACHE_NAME).then(cache => {
+        caches.open(CACHE_NAME).then((cache) => {
           cache.put(event.request, responseToCache);
         });
 

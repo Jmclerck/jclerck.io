@@ -1,0 +1,119 @@
+address {
+  max-width: 16ch;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "footer footer footer footer";
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: minmax(3rem, auto) 1fr minmax(3rem, auto);
+  margin: unset;
+}
+
+footer {
+  display: grid;
+  grid-area: footer;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 1fr;
+  justify-content: space-evenly;
+}
+
+footer > a {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  justify-self: center;
+  overflow: clip;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  width: clamp(320px, 75vw, 80ch);
+}
+
+section > ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  padding: unset;
+}
+
+section > header {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+}
+
+section > header > a {
+  justify-self: center;
+}
+
+section > header > h2,
+section > header > h3,
+section > header > h4 {
+  margin: unset;
+}
+
+section > svg {
+  height: 5rem;
+  margin: auto;
+  width: auto;
+}
+
+@media screen and (min-width: 567px) {
+  section {
+    scroll-snap-align: start;
+  }
+
+  section > ul {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+  }
+
+  section > header {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  section > header > a {
+    grid-row: span 2;
+  }
+
+  section > header > h2 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: unset;
+  }
+
+  section > header > h3 {
+    grid-column: 3;
+    grid-row: 1;
+    margin: unset;
+  }
+
+  section > header > h4 {
+    grid-column: 2/4;
+    grid-row: 2;
+    margin: unset;
+  }
+}

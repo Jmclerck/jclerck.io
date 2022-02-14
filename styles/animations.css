@@ -1,0 +1,28 @@
+@supports (animation-timeline: test) {
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  @scroll-timeline rotation-timeline {
+    source: selector(#main);
+  }
+
+  section > svg > path {
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-name: rotation;
+    animation-timeline: rotation-timeline;
+    animation-timing-function: linear;
+    transform-box: fill-box;
+    transform-origin: 50%;
+  }
+
+  section > svg > path:nth-child(odd) {
+    animation-direction: reverse;
+  }
+}
