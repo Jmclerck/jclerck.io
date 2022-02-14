@@ -12,7 +12,7 @@ body {
     "header header header header"
     "sidebar main main main"
     "footer footer footer footer";
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto repeat(3, 1fr);
   grid-template-rows: minmax(3rem, auto) 1fr minmax(3rem, auto);
   margin: unset;
 }
