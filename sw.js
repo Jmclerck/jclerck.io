@@ -1,6 +1,6 @@
 const CACHE_NAME = "jclerck-v2";
 
-const urlsToCache = ["/", "./styles", "./styles"];
+const urlsToCache = ["/", "./sprites", "./styles"];
 
 self.addEventListener("install", function (event) {
   self.skipWaiting();
