@@ -71,7 +71,8 @@ h3 {
 }
 
 footer > a > :is(address, span) {
-  display: none;
+  opacity: 0;
+  width: 0;
 }
 
 section > ul {
@@ -88,6 +89,7 @@ section > svg {
 
 @media screen and (min-width: 567px) {
   footer > a > :is(address, span) {
-    display: block;
+    opacity: 1;
+    width: auto;
   }
 }

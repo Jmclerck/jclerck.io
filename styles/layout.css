@@ -28,7 +28,6 @@ footer {
 footer > a {
   align-items: center;
   display: flex;
-  gap: 1rem;
 }
 
 h1 {
@@ -80,6 +79,10 @@ section > svg {
 }
 
 @media screen and (min-width: 567px) {
+  footer > a {
+    gap: 1rem;
+  }
+
   section {
     scroll-snap-align: start;
   }
