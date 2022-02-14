@@ -31,7 +31,12 @@
     <main id="main">
       <section aria-describedby="ufurnish">
         <header>
-          <a href="https://ufurnish.com" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about uFurnish.com"
+            href="https://ufurnish.com"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#light-contrast-layer" />
               <use
@@ -163,7 +168,12 @@
 
       <section aria-describedby="biteable">
         <header>
-          <a href="https://biteable.com" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about Biteable"
+            href="https://biteable.com"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#dark-contrast-layer" />
               <use
@@ -305,6 +315,7 @@
       <section aria-describedby="particle-analytics">
         <header>
           <a
+            aria-label="Read more about Particle Analytics"
             href="http://particle-analytics.com"
             rel="noreferrer"
             target="_blank"
@@ -452,7 +463,12 @@
 
       <section aria-describedby="hyperdigital">
         <header>
-          <a href="https://kpv-lab.co.uk/" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about HyperDigital"
+            href="https://kpv-lab.co.uk/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#light-contrast-layer" />
               <use
@@ -571,7 +587,12 @@
 
       <section aria-describedby="ncr">
         <header>
-          <a href="https://ncr.com" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about NCR"
+            href="https://ncr.com"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#dark-contrast-layer" />
               <use href="sprites/companies.svg#ncr" width="75%" x="12.5%" />
@@ -673,7 +694,12 @@
 
       <section aria-describedby="siscog">
         <header>
-          <a href="https://www.siscog.pt/en/" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about Sistemas Cognitivos"
+            href="https://www.siscog.pt/en/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#dark-contrast-layer" />
               <use href="sprites/companies.svg#siscog" height="75%" y="12.5%" />
@@ -758,7 +784,12 @@
 
       <section aria-describedby="vertual">
         <header>
-          <a href="https://vertual.co.uk" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about Vertual"
+            href="https://vertual.co.uk"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#light-contrast-layer" />
               <use
@@ -873,7 +904,12 @@
 
       <section aria-describedby="seed">
         <header>
-          <a href="https://lampada.co" rel="noreferrer" target="_blank">
+          <a
+            aria-label="Read more about SEED Software"
+            href="https://lampada.co"
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
               <use href="#dark-contrast-layer" />
               <use href="sprites/companies.svg#seed" height="75%" y="12.5%" />
@@ -961,7 +997,22 @@
       </a>
     </footer>
 
-    <script type="module">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function addSylesheet(url) {
+          const link = document.createElement("link");
+          link.href = url;
+          link.rel = "stylesheet";
+          document.head.append(link);
+        }
+
+        addSylesheet("./styles/layout.css");
+        addSylesheet("./styles/theme.css");
+        addSylesheet("./styles/animations.css");
+      });
+    </script>
+
+    <script>
       if ("serviceWorker" in navigator) {
         if (!navigator.serviceWorker.controller) {
           const reg = navigator.serviceWorker
@@ -975,21 +1026,6 @@
             });
         }
       }
-    </script>
-
-    <script type="module">
-      document.addEventListener("DOMContentLoaded", () => {
-        function addSylesheet(url) {
-          const link = document.createElement("link");
-          link.href = url;
-          link.rel = "stylesheet";
-          document.head.append(link);
-        }
-
-        addSylesheet("./styles/layout.css");
-        addSylesheet("./styles/theme.css");
-        addSylesheet("./styles/animations.css");
-      });
     </script>
 
     <noscript>
