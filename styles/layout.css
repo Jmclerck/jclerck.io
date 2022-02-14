@@ -9,10 +9,10 @@ aside {
 body {
   display: grid;
   grid-template-areas:
-    "header header header header"
-    "sidebar main main main"
-    "footer footer footer footer";
-  grid-template-columns: auto repeat(3, 1fr);
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
   grid-template-rows: minmax(3rem, auto) 1fr minmax(3rem, auto);
   margin: unset;
 }
@@ -43,8 +43,9 @@ main {
   justify-self: center;
   overflow: clip;
   overflow: scroll;
+  padding-block: 1.25vw;
+  padding-inline: 12.5vw;
   scroll-snap-type: y mandatory;
-  width: clamp(320px, 75vw, 80ch);
 }
 
 section > ul {
