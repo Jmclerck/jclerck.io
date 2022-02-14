@@ -76,7 +76,7 @@ section > ul {
   list-style: none;
 }
 
-section > ul > a {
+section > ul > li > a {
   text-decoration: none;
 }
 
