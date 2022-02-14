@@ -31,6 +31,10 @@ footer > a {
   gap: 1rem;
 }
 
+h1 {
+  text-align: center;
+}
+
 header {
   grid-area: header;
 }
