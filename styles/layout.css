@@ -35,8 +35,12 @@ main {
   margin-block: 2rem;
   overflow: clip;
   overflow: scroll;
+  padding-inline: clamp(
+    calc((100vw - 60ch) / 2),
+    12.5vw,
+    calc((100vw - 320px) / 2)
+  );
   scroll-snap-type: y mandatory;
-  width: clamp(320px, 75vw, 60ch);
 }
 
 section > ul {
