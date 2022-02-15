@@ -1,6 +1,6 @@
 :root {
-  --colour-highlight-primary: #9400ff;
-  --colour-highlight-secondary: #f02200;
+  --colour-highlight-primary: #ff6700;
+  --colour-highlight-secondary: #0098ff;
   --colour-primary: #fafafa;
   --colour-secondary: #454545;
 
@@ -13,8 +13,6 @@
 
 @media screen and (prefers-color-scheme: dark) {
   :root {
-    --colour-highlight-primary: #9400ff;
-    --colour-highlight-secondary: #00ffff;
     --colour-primary: #303030;
     --colour-secondary: #fafafa;
   }
@@ -22,13 +20,7 @@
 
 @supports (color: color(display-p3 1 1 1)) {
   :root {
-    --colour-highlight-secondary: color(display-p3 1 0.2332 0.1336);
-  }
-
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --colour-highlight-secondary: color(display-p3 0 0.985 1);
-    }
+    --colour-highlight-secondary: color(display-p3 0 0.75 1);
   }
 }
 
