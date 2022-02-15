@@ -23,6 +23,7 @@ footer {
   grid-template-columns: repeat(5, auto);
   grid-template-rows: 1fr;
   justify-content: space-evenly;
+  overflow: hidden;
 }
 
 footer > a {
@@ -36,6 +37,7 @@ h1 {
 
 header {
   grid-area: header;
+  overflow: hidden;
 }
 
 main {
