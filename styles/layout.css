@@ -7,19 +7,11 @@ aside {
 }
 
 body {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: minmax(3rem, auto) 1fr minmax(3rem, auto);
   margin: unset;
 }
 
 footer {
   display: grid;
-  grid-area: footer;
   grid-template-columns: repeat(5, auto);
   grid-template-rows: 1fr;
   justify-content: space-evenly;
@@ -36,17 +28,15 @@ h1 {
 }
 
 header {
-  grid-area: header;
   overflow: hidden;
 }
 
 main {
-  grid-area: main;
-  justify-self: center;
+  margin-block: 2rem;
   overflow: clip;
   overflow: scroll;
   scroll-snap-type: y mandatory;
-  width: clamp(320px, 75vw, 80ch);
+  width: clamp(320px, 75vw, 60ch);
 }
 
 section > ul {
@@ -80,9 +70,32 @@ section > svg {
   width: auto;
 }
 
-@media screen and (min-width: 567px) {
+@media screen and (min-width: 737px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(3rem, auto) 1fr minmax(3rem, auto);
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
   footer > a {
     gap: 1rem;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    justify-self: center;
   }
 
   section {

@@ -79,7 +79,7 @@ section > svg {
   color: var(--colour-highlight-primary);
 }
 
-@media screen and (min-width: 567px) {
+@media screen and (min-width: 737px) {
   footer > a > :is(address, span) {
     opacity: 1;
     width: auto;
