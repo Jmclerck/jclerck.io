@@ -43,9 +43,8 @@ main {
   justify-self: center;
   overflow: clip;
   overflow: scroll;
-  padding-block: 1.25vw;
-  padding-inline: 12.5vw;
   scroll-snap-type: y mandatory;
+  width: clamp(320px, 75vw, 80ch);
 }
 
 section > ul {
