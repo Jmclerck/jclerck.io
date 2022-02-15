@@ -20,7 +20,7 @@ body {
 footer {
   display: grid;
   grid-area: footer;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(5, auto);
   grid-template-rows: 1fr;
   justify-content: space-evenly;
 }
