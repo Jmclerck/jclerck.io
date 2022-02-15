@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
     <style>
         .background {
-            fill: #fafafa;
+            fill: #303030;
         }
 
         @media (prefers-color-scheme: dark) {
             .background {
-                fill:  #303030;
+                fill:  #fafafa;
             }
         }
     </style>
