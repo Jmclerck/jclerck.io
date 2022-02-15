@@ -1,5 +1,5 @@
 {
-  "background_color": "#be64ff",
+  "background_color": "#9400ff",
   "description": "Jclerck.io",
   "icons": [
     {
@@ -18,5 +18,5 @@
   "name": "Jclerck.io",
   "scope": "/",
   "start_url": "/",
-  "theme_color": "#be64ff"
+  "theme_color": "#9400ff"
 }

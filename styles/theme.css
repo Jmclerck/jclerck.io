@@ -1,5 +1,5 @@
 :root {
-  --colour-highlight-primary: #be64ff;
+  --colour-highlight-primary: #9400ff;
   --colour-highlight-secondary: #f02200;
   --colour-primary: #fafafa;
   --colour-secondary: #454545;
@@ -13,22 +13,20 @@
 
 @media screen and (prefers-color-scheme: dark) {
   :root {
-    --colour-highlight-primary: #be64ff;
+    --colour-highlight-primary: #9400ff;
     --colour-highlight-secondary: #00ffff;
     --colour-primary: #303030;
     --colour-secondary: #fafafa;
   }
 }
 
-@media screen and (color: color(display-p3 1 1 1)) {
+@supports (color: color(display-p3 1 1 1)) {
   :root {
-    --colour-highlight-primary: color(display-p3 0.3825 0 0.6898);
     --colour-highlight-secondary: color(display-p3 1 0.2332 0.1336);
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media screen and (prefers-color-scheme: dark) {
     :root {
-      --colour-highlight-primary: color(display-p3 0.75 0.35 1);
       --colour-highlight-secondary: color(display-p3 0 0.985 1);
     }
   }
@@ -59,6 +57,12 @@ body > header {
 
 h1 {
   color: var(--colour-primary);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  h1 {
+    color: var(--colour-secondary);
+  }
 }
 
 h2,
