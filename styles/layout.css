@@ -43,7 +43,7 @@ main {
   scroll-snap-type: y mandatory;
 }
 
-section > ul {
+article > ul {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
@@ -51,24 +51,24 @@ section > ul {
   padding: unset;
 }
 
-section > header {
+article > header {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
 }
 
-section > header > a {
+article > header > a {
   justify-self: center;
 }
 
-section > header > h2,
-section > header > h3,
-section > header > h4 {
+article > header > h2,
+article > header > h3,
+article > header > h4 {
   margin: unset;
 }
 
-section > svg {
+article > svg {
   height: 5rem;
   margin: 2.5rem auto;
   width: auto;
@@ -102,11 +102,11 @@ section > svg {
     justify-self: center;
   }
 
-  section {
+  article {
     scroll-snap-align: start;
   }
 
-  section > header {
+  article > header {
     align-items: center;
     display: grid;
     gap: 1rem;
@@ -114,23 +114,23 @@ section > svg {
     grid-template-rows: repeat(2, 1fr);
   }
 
-  section > header > a {
+  article > header > a {
     grid-row: span 2;
   }
 
-  section > header > h2 {
+  article > header > h2 {
     grid-column: 2;
     grid-row: 1;
     margin: unset;
   }
 
-  section > header > h3 {
+  article > header > h3 {
     grid-column: 3;
     grid-row: 1;
     margin: unset;
   }
 
-  section > header > h4 {
+  article > header > h4 {
     grid-column: 2/4;
     grid-row: 2;
     margin: unset;

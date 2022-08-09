@@ -67,15 +67,15 @@ footer > a > :is(address, span) {
   width: 0;
 }
 
-section > ul {
+article > ul {
   list-style: none;
 }
 
-section > ul > li > a {
+article > ul > li > a {
   text-decoration: none;
 }
 
-section > svg {
+article > svg {
   color: var(--colour-highlight-primary);
 }
 

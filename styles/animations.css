@@ -13,7 +13,7 @@
       source: selector(#main);
     }
 
-    section > svg > path {
+    article > svg > path {
       animation-direction: normal;
       animation-duration: 1s;
       animation-name: rotation;
@@ -23,7 +23,7 @@
       transform-origin: 50%;
     }
 
-    section > svg > path:nth-child(odd) {
+    article > svg > path:nth-child(odd) {
       animation-direction: reverse;
     }
   }
