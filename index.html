@@ -21,6 +21,18 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+
+    <script type="module">
+      import { webVitals } from "./analytics.js";
+
+      debugger;
+
+      webVitals({
+        analyticsId: process.env.VERCEL_ANALYTICS_ID,
+        env: process.env.VERCEL_ENV,
+        test: process.env.NEXT_PUBLIC_TEST,
+      });
+    </script>
   </head>
 
   <body>
