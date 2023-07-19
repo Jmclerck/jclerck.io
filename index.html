@@ -19,12 +19,6 @@
   <link rel="icon" href="/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
-
-  <script type="module">
-    import { webVitals } from "./analytics.js";
-
-    webVitals();
-  </script>
 </head>
 
 <body>
@@ -922,22 +916,6 @@
       addSylesheet("./styles/theme.css");
       addSylesheet("./styles/animations.css");
     });
-  </script>
-
-  <script>
-    if ("serviceWorker" in navigator) {
-      if (!navigator.serviceWorker.controller) {
-        const reg = navigator.serviceWorker
-          .register("sw.js", {
-            scope: "./",
-          })
-          .then((reg) => {
-            console.log(
-              "Service worker has been registered for scope: " + reg.scope
-            );
-          });
-      }
-    }
   </script>
 
   <noscript>
