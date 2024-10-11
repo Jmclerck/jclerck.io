@@ -1,138 +1,103 @@
-address {
-  max-width: 16ch;
-}
+article {
+  padding-block: 2rem;
+  padding-inline: 1rem;
 
-aside {
-  grid-area: sidebar;
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    > a {
+      margin: auto;
+    }
+
+    dl {
+      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: space-between;
+      margin-block: unset;
+
+      dd {
+        color: var(--colour-highlight-primary);
+
+        &:after {
+          content: ":";
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vb 2vi;
+    justify-content: center;
+    margin: unset;
+    padding: unset;
+  }
 }
 
 body {
   margin: unset;
+
+  > header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      a {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    h1 {
+      margin: unset;
+    }
+  }
 }
 
-footer {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-template-rows: 1fr;
-  justify-content: space-evenly;
-  overflow: hidden;
-}
+p {
+  font-size: 0.9rem;
 
-footer > a {
-  align-items: center;
-  display: flex;
-}
+  &:first-of-type {
+    margin-block-start: 2rem;
+  }
 
-h1 {
-  text-align: center;
-}
-
-header {
-  overflow: hidden;
-}
-
-main {
-  margin-block: 2rem;
-  overflow: clip;
-  overflow: scroll;
-  padding-inline: clamp(
-    calc((100vw - 60ch) / 2),
-    12.5vw,
-    calc((100vw - 320px) / 2)
-  );
-  scroll-snap-type: y mandatory;
-}
-
-article > ul {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
-  justify-items: center;
-  padding: unset;
-}
-
-article > header {
-  display: grid;
-  gap: 0.25rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, auto);
-}
-
-article > header > a {
-  justify-self: center;
-}
-
-article > header > h2,
-article > header > h3,
-article > header > h4 {
-  margin: unset;
-}
-
-article > svg {
-  height: 5rem;
-  margin: 2.5rem auto;
-  width: auto;
+  &:last-of-type {
+    margin-block-end: 2rem;
+  }
 }
 
 @media screen and (min-width: 737px) {
-  body {
-    display: grid;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(3rem, auto) 1fr minmax(3rem, auto);
-  }
-
-  footer {
-    grid-area: footer;
-  }
-
-  footer > a {
-    gap: 1rem;
-  }
-
-  header {
-    grid-area: header;
-  }
-
-  main {
-    grid-area: main;
-    justify-self: center;
-  }
-
   article {
-    scroll-snap-align: start;
-  }
+    padding-inline: calc(100% - 85vi);
 
-  article > header {
-    align-items: center;
-    display: grid;
-    gap: 0.25rem;
-    grid-template-columns: max-content auto auto;
-    grid-template-rows: repeat(2, 1fr);
-  }
+    header {
+      align-items: start;
+      flex-direction: row;
+      justify-content: space-evenly;
 
-  article > header > a {
-    grid-row: span 2;
-  }
+      a {
+        margin: unset;
+      }
 
-  article > header > h2 {
-    grid-column: 2;
-    grid-row: 1;
-    margin: unset;
-  }
-
-  article > header > h3 {
-    grid-column: 3;
-    grid-row: 1;
-    margin: unset;
-  }
-
-  article > header > h4 {
-    grid-column: 2/4;
-    grid-row: 2;
-    margin: unset;
+      dl {
+        align-items: center;
+        display: grid;
+        gap: 0 1rem;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+      }
+    }
   }
 }
