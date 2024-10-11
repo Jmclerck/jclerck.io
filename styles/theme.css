@@ -32,6 +32,7 @@
   color: currentColor;
   text-decoration-color: var(--color-secondary-highlight);
   text-decoration-thickness: 15%;
+  text-underline-offset: 0.125rem;
   text-underline-offset: 15%;
 
   &:visited {
