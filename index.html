@@ -692,6 +692,7 @@
               title="CSS"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 291 330" width="75%" x="12.5%">
                   <path
                     d="M290.188 0 263.75 296.159l-118.835 32.945-118.507-32.898L-.001 0h290.189Z"
@@ -721,6 +722,7 @@
               title="HTML"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 363 412" width="75%" x="12.5%">
                   <path
                     fill="#e44d26"
@@ -1620,6 +1622,7 @@
               title="CSS"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 291 330" width="75%" x="12.5%">
                   <path
                     d="M290.188 0 263.75 296.159l-118.835 32.945-118.507-32.898L-.001 0h290.189Z"
@@ -1985,6 +1988,7 @@
               title="CSS"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 291 330" width="75%" x="12.5%">
                   <path
                     d="M290.188 0 263.75 296.159l-118.835 32.945-118.507-32.898L-.001 0h290.189Z"
@@ -2014,6 +2018,7 @@
               title="HTML"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 363 412" width="75%" x="12.5%">
                   <path
                     fill="#e44d26"
@@ -2246,6 +2251,7 @@
               title="CSS"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 291 330" width="75%" x="12.5%">
                   <path
                     d="M290.188 0 263.75 296.159l-118.835 32.945-118.507-32.898L-.001 0h290.189Z"
@@ -2275,6 +2281,7 @@
               title="HTML"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 363 412" width="75%" x="12.5%">
                   <path
                     fill="#e44d26"
@@ -2520,6 +2527,7 @@
               title="CSS"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 291 330" width="75%" x="12.5%">
                   <path
                     d="M290.188 0 263.75 296.159l-118.835 32.945-118.507-32.898L-.001 0h290.189Z"
@@ -2549,6 +2557,7 @@
               title="HTML"
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
+                <use href="#transparent-layer" />
                 <svg viewBox="0 0 363 412" width="75%" x="12.5%">
                   <path
                     fill="#e44d26"
@@ -2783,7 +2792,6 @@
             >
               <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60">
                 <use href="#contrast-layer" />
-
                 <svg viewBox="0 0 947 947" width="75%" x="12.5%">
                   <path
                     fill="navy"
@@ -2820,34 +2828,52 @@
       style="height: 0; visibility: hidden; width: 0"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <symbol id="contrast-layer" viewBox="0 0 256 256">
-        <style>
-          .light-background {
-            fill: white;
+      <style>
+        svg {
+          --color-contrast-background: oklch(1 0 0);
+          --color-contrast-border: oklch(0 0 0);
+          --color-fullbleed-background: var(--color-primary);
+          --color-fullbleed-border: none;
+          --color-transparent-background: none;
+        }
+
+        a {
+          &:has(> svg) {
+            outline: none;
           }
 
-          .light-border {
-            fill: black;
+          &:focus > svg,
+          &:hover > svg {
+            --color-contrast-background: oklch(0.75 0.15 290 / 0.5);
+            --color-fullbleed-border: var(--color-secondary);
+            --color-transparent-background: var(--color-secondary);
           }
-        </style>
+        }
+      </style>
+      <symbol id="contrast-layer" viewBox="0 0 256 256">
         <path
-          class="light-background"
           d="M256 64c0-35.323-28.677-64-64-64H64C28.678 0 0 28.677 0 64v128c0 35.322 28.678 64 64 64h128c35.323 0 64-28.678 64-64V64Z"
+          fill="var(--color-contrast-background)"
         />
         <path
-          class="light-border"
           d="M256 64c0-35.323-28.677-64-64-64H64C28.678 0 0 28.677 0 64v128c0 35.322 28.678 64 64 64h128c35.323 0 64-28.678 64-64V64Zm-10 0v128c0 29.802-24.195 53.999-54 53.999H64c-29.804 0-54-24.197-54-54V64c0-29.802 24.196-53.998 54-53.998h128c29.805 0 54 24.196 54 53.999Z"
+          fill="var(--color-contrast-border)"
         />
       </symbol>
       <symbol id="fullbleed-layer" viewBox="0 0 256 256">
-        <style>
-          .fullbleed-border {
-            fill: var(--color-primary);
-          }
-        </style>
         <path
-          class="fullbleed-border"
           d="M0 64V0h64C28.678 0 0 28.677 0 64ZM192 0h64v64c0-35.323-28.677-64-64-64Zm64 192v64h-64c35.323 0 64-28.678 64-64ZM64 256H0v-64c0 35.322 28.678 64 64 64Z"
+          fill="var(--color-fullbleed-background)"
+        />
+        <path
+          d="M256 64v128c0 35.322-28.677 64-64 64H64c-35.322 0-64-28.678-64-64V64C0 28.677 28.678 0 64 0h128c35.323 0 64 28.677 64 64Zm-18.758 4.25c0-27.59-22.4-49.99-49.992-49.99H68.75c-27.592 0-49.992 22.4-49.992 49.99v118.499c0 27.591 22.4 49.992 49.992 49.992h118.5c27.593 0 49.992-22.4 49.992-49.991V68.25Z"
+          fill="var(--color-fullbleed-border)"
+        />
+      </symbol>
+      <symbol id="transparent-layer" viewBox="0 0 256 256">
+        <path
+          d="M256 64c0-35.323-28.677-64-64-64H64C28.678 0 0 28.677 0 64v128c0 35.322 28.678 64 64 64h128c35.323 0 64-28.678 64-64V64Z"
+          fill="var(--color-transparent-background)"
         />
       </symbol>
     </svg>
