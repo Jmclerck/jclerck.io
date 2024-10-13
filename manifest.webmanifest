@@ -1,22 +1,26 @@
 {
   "background_color": "#003a3f",
-  "description": "Jclerck.io",
+  "description": "Personal website of Jonathan Clerck",
   "icons": [
     {
-      "purpose": "any maskable",
-      "sizes": "192x192",
-      "src": "/icon-192.png",
-      "type": "image/png"
+        "sizes": "192x192",
+        "src": "/icon-192.png",
+        "type": "image/png"
     },
     {
-      "purpose": "any maskable",
-      "sizes": "512x512",
-      "src": "/icon-512.png",
-      "type": "image/png"
+        "purpose": "maskable",
+        "sizes": "512x512",
+        "src": "/icon-mask.png",
+        "type": "image/png"
+    },
+    {
+        "sizes": "512x512",
+        "src": "/icon-512.png",
+        "type": "image/png"
     }
   ],
   "name": "Jclerck.io",
   "scope": "/",
   "start_url": "/",
-  "theme_color": "#ff6700"
+  "theme_color": "#003a3f"
 }
