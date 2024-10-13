@@ -59,7 +59,6 @@ body {
       a {
         align-items: center;
         display: flex;
-        gap: 1rem;
       }
     }
 
@@ -100,6 +99,14 @@ p {
         gap: 0 1rem;
         grid-template-columns: repeat(2, auto);
         justify-content: space-between;
+      }
+    }
+  }
+
+  body {
+    > header {
+      a {
+        gap: 1rem;
       }
     }
   }

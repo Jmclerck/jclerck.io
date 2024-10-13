@@ -78,6 +78,7 @@ body {
 
   :is(address, span) {
     font-style: normal;
+    pointer-events: none;
     opacity: 0;
     width: 0;
   }
@@ -87,6 +88,7 @@ body {
   body {
     :is(address, span) {
       opacity: 1;
+      pointer-events: initial;
       width: auto;
     }
   }
