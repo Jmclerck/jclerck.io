@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write # This is required to allow the GitHub Action to authenticate with Deno Deploy.
 
 jobs:
   test:
@@ -26,9 +27,9 @@ jobs:
         uses: denoland/setup-deno@v1
         with:
           deno-version: v2.x
-    
-      - name: Setup Deploy
-        run: deno install -Arf jsr:@deno/deployctl
 
-      - name: Deploy
-        run: deployctl deploy --project=jclerck https://jsr.io/@std/http/1.0.7/file_server.ts
+      - name: Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          entrypoint: https://jsr.io/@std/http/1.0.7/file_server.ts
+          project: jclerck
