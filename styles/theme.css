@@ -30,6 +30,7 @@
 
 :any-link {
   color: currentColor;
+  overflow: clip;
   text-decoration-color: var(--color-secondary-highlight);
   text-decoration-thickness: 15%;
   text-underline-offset: 0.125rem;
