@@ -30,12 +30,15 @@ article {
   }
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2vb 2vi;
-    justify-content: center;
     margin: unset;
     padding: unset;
+    text-align: center;
+    text-wrap: balance;
+
+    li {
+      display: inline-block;
+      margin: 1vb 1vi;
+    }
   }
 }
 
